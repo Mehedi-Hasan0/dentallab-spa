@@ -124,3 +124,15 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Others */
+#blob {
+  background-color: transparent;
+  height: 2vmax;
+  aspect-ratio: 1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  border-radius: 50%;
+}

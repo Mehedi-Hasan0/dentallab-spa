@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Work_Sans } from "next/font/google";
 import "./globals.css";
+import CursorEffect from "@/components/shared/CursorEffect";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -26,8 +27,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${workSans.variable} antialiased`}>
+      <body
+        className={`${inter.variable} ${workSans.variable} antialiased bg-black overflow-hidden`}
+      >
         {children}
+        <CursorEffect />
       </body>
     </html>
   );

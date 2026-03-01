@@ -1,3 +1,3 @@
 export default function Home() {
-  return <h1>Dentallab</h1>;
+  return <div className="min-h-[300vh]"></div>;
 }
