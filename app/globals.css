@@ -50,7 +50,7 @@
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --foreground: #110f10;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -121,13 +121,16 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-foreground text-white overflow-x-hidden box-border font-work-sans;
   }
 }
 
 @layer utilities {
   .main-container {
     @apply max-w-2xl mx-auto 2xl:px-20 2xl:py-40;
+  }
+  .nav-spacing {
+    @apply px-5 py-5 xl:px-10 xl:py-7 2xl:px-20
   }
 }
 
