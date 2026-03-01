@@ -125,6 +125,12 @@
   }
 }
 
+@layer utilities {
+  .main-container {
+    @apply max-w-2xl mx-auto 2xl:px-20 2xl:py-40;
+  }
+}
+
 /* Others */
 #blob {
   background-color: transparent;
