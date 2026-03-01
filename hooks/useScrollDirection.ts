@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-export function useScrollDirection() {
+export function useScrollDirection(onScrollDown?: () => void) {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -14,6 +14,7 @@ export function useScrollDirection() {
         if (currentScrollY > lastScrollY && currentScrollY > 100) {
           // Scrolling down
           setIsVisible(false);
+          onScrollDown?.();
         } else {
           // Scrolling up
           setIsVisible(true);
@@ -27,7 +28,7 @@ export function useScrollDirection() {
     return () => {
       window.removeEventListener("scroll", controlNavbar);
     };
-  }, [lastScrollY]);
+  }, [lastScrollY, onScrollDown]);
 
   return isVisible;
 }
