@@ -1,4 +1,11 @@
-import { NavLink, SocialLink, OfficeInfo, FeatureItem, StatsContent } from '@/types';
+import {
+  NavLink,
+  SocialLink,
+  OfficeInfo,
+  FeatureItem,
+  StatsContent,
+  ArchRestorationContent,
+} from '@/types';
 
 export const navLinks: NavLink[] = [
   {
@@ -172,6 +179,61 @@ export const statsContent: StatsContent = {
       suffix: '%',
       description:
         'Cases Submitted Digitally — Trusted by Tech-Forward Practices Using iTero, TRIOS, Medit, and More',
+    },
+  ],
+};
+
+export const archRestorationContent: ArchRestorationContent = {
+  title: 'The Future of Full\nArch Restorations',
+  description:
+    'Aesthetic, repairable, and biomechanically superior individual crowns placed over CAD/CAM titanium bar',
+  videoSrc: '/videos/scroll-animated.mp4',
+  cards: [
+    {
+      title: 'Individual PFZ Crowns',
+      description:
+        'Durable restorations layered to achieve natural translucency and shade matching',
+      icon: '/icons/arch/crown.svg',
+      align: 'text-right' as const,
+      lineIcon: '/icons/arch/arch-line-tl.svg',
+      lineWidth: '12%',
+      lineHeight: '18%',
+      position: { top: '5%', left: '0%' },
+      linePosition: { top: '4%', left: '24%' },
+    },
+    {
+      title: 'Titanium Screws',
+      description: 'Secure, retrievable components for streamlined placement and serviceability',
+      icon: '/icons/arch/screw.svg',
+      align: 'text-left' as const,
+      lineIcon: '/icons/arch/arch-line-tr.svg',
+      lineWidth: '12%',
+      lineHeight: '25%',
+      position: { top: '5%', right: '0%' },
+      linePosition: { top: '4%', right: '24%' },
+    },
+    {
+      title: 'Retrievable & Serviceable Design',
+      description:
+        'Crown-level repairs without removing the full prosthesis, practical for long-term care',
+      icon: '/icons/arch/design.svg',
+      align: 'text-right' as const,
+      lineIcon: '/icons/arch/arch-line-bl.svg',
+      lineWidth: '10%',
+      lineHeight: '18%',
+      position: { bottom: '8%', left: '0%' },
+      linePosition: { bottom: '8%', left: '24%' },
+    },
+    {
+      title: 'Hybrid Bar',
+      description: 'Digitally milled for strength, passive fit, and precise implant engagement.',
+      icon: '/icons/arch/bar.svg',
+      align: 'text-left' as const,
+      lineIcon: '/icons/arch/arch-line-br.svg',
+      lineWidth: '12%',
+      lineHeight: '34%',
+      position: { bottom: '8%', right: '0%' },
+      linePosition: { bottom: '6%', right: '24%' },
     },
   ],
 };

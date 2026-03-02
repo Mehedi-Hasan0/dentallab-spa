@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 
 let lenisInstance: Lenis | null = null;
 
+export const getLenis = () => lenisInstance;
 export const stopLenis = () => lenisInstance?.stop();
 export const startLenis = () => lenisInstance?.start();
 

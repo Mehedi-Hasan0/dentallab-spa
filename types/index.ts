@@ -55,3 +55,33 @@ export type StatsContent = {
   description: string;
   items: StatItem[];
 };
+
+export type ArchCard = {
+  title: string;
+  description: string;
+  icon: string;
+  /** Text alignment for the card — left-side cards are right-aligned, right-side cards are left-aligned */
+  align: 'text-left' | 'text-right';
+  position: {
+    top?: string;
+    bottom?: string;
+    left?: string;
+    right?: string;
+  };
+  lineIcon: string;
+  lineWidth: string;
+  lineHeight: string;
+  linePosition: {
+    top?: string;
+    bottom?: string;
+    left?: string;
+    right?: string;
+  };
+};
+
+export type ArchRestorationContent = {
+  title: string;
+  description: string;
+  videoSrc: string;
+  cards: ArchCard[];
+};
