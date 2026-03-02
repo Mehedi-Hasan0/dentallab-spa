@@ -30,3 +30,16 @@ export type PartnerLogo = {
   name: string;
   src: string;
 };
+
+export type FeatureItem = {
+  title?: string;
+  description?: string;
+  image?: string;
+  imageAlt?: string;
+  variant?: 'default' | 'large' | 'graphic';
+  cta?: {
+    text: string;
+    href: string;
+    ariaLabel?: string;
+  };
+};

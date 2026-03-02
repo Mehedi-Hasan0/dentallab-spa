@@ -131,7 +131,7 @@
 
 @layer utilities {
   .main-container {
-    @apply mx-auto max-w-2xl 2xl:px-20 2xl:py-40;
+    @apply mx-auto max-w-screen-2xl px-5 py-20 lg:px-14 lg:py-28 xl:px-16 xl:py-32 2xl:px-20 2xl:py-40;
   }
   .section-spacing-1 {
     @apply 2xl:px-40 2xl:py-20;
@@ -172,6 +172,15 @@
   /* TEXT */
   .text-gradient {
     @apply bg-linear-to-r from-white/40 to-white/25 bg-clip-text text-transparent;
+  }
+  .desc-text {
+    @apply text-sm leading-relaxed text-white md:text-base lg:text-lg;
+  }
+  .title-text {
+    @apply bg-linear-to-r from-white/90 to-white/50 bg-clip-text text-3xl font-medium text-transparent md:text-4xl lg:text-5xl xl:text-6xl;
+  }
+  .feature-text {
+    @apply text-sm md:text-base lg:text-lg xl:text-[1.375em];
   }
 }
 

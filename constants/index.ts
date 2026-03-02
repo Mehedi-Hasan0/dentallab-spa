@@ -1,4 +1,4 @@
-import { NavLink, SocialLink, OfficeInfo } from '@/types';
+import { NavLink, SocialLink, OfficeInfo, FeatureItem } from '@/types';
 
 export const navLinks: NavLink[] = [
   {
@@ -102,4 +102,50 @@ export const heroContent = {
     { name: 'University of Miami', src: '/icons/partner/partner-logo-6.svg' },
     { name: 'Prep Doctors', src: '/icons/partner/partner-logo-7.svg' },
   ],
+};
+
+export const featuresContent = {
+  title: 'Our Features',
+  description:
+    'Cosmetic excellence, high-precision restorations, and All-on-X expertise, everything crafted with care and technical mastery.',
+  items: [
+    {
+      title: 'Your First Case,\nBacked by $150 Credit',
+      description:
+        "Whether it's a single crown or a full-mouth restoration, your first case comes with a $150 lab credit!!!",
+      variant: 'large',
+      cta: {
+        text: 'First Case Credit',
+        href: '#contact',
+        ariaLabel: 'Claim your $150 first case credit by contacting us',
+      },
+    },
+    {
+      title: 'Cosmetic Excellence',
+      variant: 'default',
+    },
+    {
+      image: '/images/feature/feature-2.webp',
+      imageAlt: 'High-precision dental crown showcasing cosmetic excellence',
+      variant: 'graphic',
+    },
+    {
+      title: 'All-on-X Specialists',
+      variant: 'default',
+    },
+    {
+      image: '/images/feature/feature-1.webp',
+      imageAlt: 'Professional dental technicians working on All-on-X restorations',
+      variant: 'graphic',
+    },
+    {
+      title: 'High-Precision\nRestorations',
+      variant: 'default',
+    },
+    {
+      image: '/images/feature/feature-3.webp',
+      imageAlt: 'Detailed view of a high-precision dental bridge restoration',
+      variant: 'graphic',
+    },
+  ] as FeatureItem[],
 };
