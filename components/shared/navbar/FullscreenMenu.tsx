@@ -37,7 +37,7 @@ export default function FullscreenMenu({ isOpen, onClose }: FullscreenMenuProps)
               {/* Background Pattern */}
               <div className="absolute inset-0 z-0">
                 <Image
-                  src="/images/bg-pattern-2.webp"
+                  src="/images/bg-img/bg-pattern-2.webp"
                   alt=""
                   fill
                   className="object-cover opacity-50"

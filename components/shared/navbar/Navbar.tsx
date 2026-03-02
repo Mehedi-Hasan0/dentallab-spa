@@ -57,6 +57,7 @@ export default function Navbar() {
                 height={48}
                 className="h-10 object-contain md:h-12"
                 fetchPriority="high"
+                priority
               />
             </div>
           </Link>

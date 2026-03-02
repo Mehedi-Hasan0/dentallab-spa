@@ -3,57 +3,57 @@ import { NavLink, SocialLink, OfficeInfo } from '@/types';
 export const navLinks: NavLink[] = [
   {
     name: 'Products',
-    href: '/products',
+    href: '#products',
     hasDropdown: true,
     dropdownItems: [
       {
         title: 'Fixed',
         description:
           'High-Precision Crowns & Bridges Designed for Strength, Fit, and Natural Esthetics',
-        href: '/products/fixed',
+        href: '#products-fixed',
         showSeeDetails: true,
       },
       {
         title: 'Implants',
         description: 'Customized Implant Solutions for Long-Term Success and Seamless Integration',
-        href: '/products/implants',
+        href: '#products-implants',
         showSeeDetails: true,
       },
       {
         title: 'Removables',
         description:
           'Comfortable, Durable Dentures Crafted for Functionality and Patient Satisfaction',
-        href: '/products/removables',
+        href: '#products-removables',
         showSeeDetails: true,
       },
       {
         title: 'Retainers',
         description: 'Reliable Orthodontic Retention Appliances for Long-Lasting Treatment Results',
-        href: '/products/retainers',
+        href: '#products-retainers',
         showSeeDetails: true,
       },
     ],
   },
-  { name: 'Latest Cases', href: '/cases' },
-  { name: 'Materials', href: '/materials' },
-  { name: 'Workflow', href: '/workflow' },
-  { name: 'Educational', href: '/educational' },
+  { name: 'Latest Cases', href: '#cases' },
+  { name: 'Materials', href: '#materials' },
+  { name: 'Workflow', href: '#workflow' },
+  { name: 'Educational', href: '#educational' },
   {
     name: 'Contact',
-    href: '/contact',
+    href: '#contact',
     hasDropdown: true,
     dropdownItems: [
       {
         title: 'Visit our lab in New York',
         phone: '866-522-7735',
         email: 'info.ny@dentallab.com',
-        href: '/contact/new-york',
+        href: '#contact-new-york',
       },
       {
         title: 'Visit our lab in Florida',
         phone: '866-362-4776',
         email: 'info.fl@dentallab.com',
-        href: '/contact/florida',
+        href: '#contact-florida',
       },
     ],
   },
@@ -78,3 +78,19 @@ export const offices: OfficeInfo[] = [
     email: 'info.fl@dentallab.com',
   },
 ];
+
+export const heroContent = {
+  title: 'FASTEST GROWING',
+  subtitle: 'DENTALLAB.COM',
+  description:
+    'Experience the future of dental restorations with the fastest growing dental lab. We provide high-precision crowns, bridges, and implant solutions with rapid turnaround times.',
+  videoSrc: '/videos/hero-video.mp4',
+  posterSrc: '/images/hero-video-poster.webp',
+  posterAlt: 'Precision dental crowns and bridges under professional lighting',
+  cta: {
+    text: 'First Case Credit',
+    href: '#contact',
+    ariaLabel: 'Claim your first case credit by contacting us',
+  },
+  benefits: ['Fast Turnaround Time', 'We Accept All Digital Scans', 'Nationwide Shipping'],
+};
