@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { motion, useScroll, useTransform, useSpring } from 'motion/react';
 import { BackgroundVideo } from './BackgroundVideo';
 import { HeroGrid } from './HeroGrid';
+import { PartnerLogos } from './PartnerLogos';
 
 /**
  * Hero component - The landing section for the home page.
@@ -25,7 +26,7 @@ export default function Hero() {
   });
 
   return (
-    <section className="relative h-screen w-full overflow-hidden" aria-labelledby="hero-title">
+    <section className="relative h-screen w-full" aria-labelledby="hero-title">
       {/* Visual background layers */}
       <BackgroundVideo
         videoSrc={heroContent.videoSrc}
@@ -35,7 +36,7 @@ export default function Hero() {
       <HeroGrid />
 
       {/* Main Content Area */}
-      <div className="relative z-10 my-5 h-full px-5 pt-(--nav-height-mobile) md:pt-(--nav-height-desktop) xl:my-7 xl:px-10 2xl:px-20">
+      <div className="relative z-10 mt-5 h-full px-5 pt-(--nav-height-mobile) md:pt-(--nav-height-desktop) xl:mt-7 xl:px-10 2xl:px-20">
         {/* Semantic description for screen readers (Hidden visually) */}
         <p className="sr-only">{heroContent.description}</p>
 
@@ -103,6 +104,9 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+      {/* Partner Logo Marquee */}
+      <PartnerLogos logos={heroContent.partnerLogos} />
     </section>
   );
 }

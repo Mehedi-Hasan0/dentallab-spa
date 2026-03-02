@@ -93,4 +93,13 @@ export const heroContent = {
     ariaLabel: 'Claim your first case credit by contacting us',
   },
   benefits: ['Fast Turnaround Time', 'We Accept All Digital Scans', 'Nationwide Shipping'],
+  partnerLogos: [
+    { name: 'NADL', src: '/icons/partner/partner-logo-1.svg' },
+    { name: 'Jackson Health System', src: '/icons/partner/partner-logo-2.svg' },
+    { name: 'TCS', src: '/icons/partner/partner-logo-3.svg' },
+    { name: 'Henry Schein', src: '/icons/partner/partner-logo-4.svg' },
+    { name: '3shape', src: '/icons/partner/partner-logo-5.svg' },
+    { name: 'University of Miami', src: '/icons/partner/partner-logo-6.svg' },
+    { name: 'Prep Doctors', src: '/icons/partner/partner-logo-7.svg' },
+  ],
 };

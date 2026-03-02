@@ -25,3 +25,8 @@ export type OfficeInfo = {
   phone: string;
   email: string;
 };
+
+export type PartnerLogo = {
+  name: string;
+  src: string;
+};
