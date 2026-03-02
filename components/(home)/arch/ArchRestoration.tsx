@@ -107,7 +107,7 @@ export default function ArchRestoration() {
           {/* Scroll affordance indicator */}
           <div aria-hidden="true" className="mt-2 flex flex-col items-center gap-2">
             <div className="h-10 w-px bg-linear-to-b from-white/20 to-transparent" />
-            <span className="text-xs font-medium tracking-widest text-white/40 uppercase">
+            <span className="text-xs font-medium tracking-widest text-white/70 uppercase">
               Scroll to explore
             </span>
           </div>

@@ -28,7 +28,7 @@ export default function ArchCard({ card, isVisible }: ArchCardProps) {
         <h3 className="text-xs font-semibold tracking-wide text-white lg:text-sm 2xl:text-base">
           {title}
         </h3>
-        <p className="text-[11px] leading-relaxed text-white/50 lg:text-xs 2xl:text-sm">
+        <p className="text-[11px] leading-relaxed text-white/70 lg:text-xs 2xl:text-sm">
           {description}
         </p>
       </motion.article>
