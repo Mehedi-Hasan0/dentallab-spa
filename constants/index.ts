@@ -1,4 +1,4 @@
-import { NavLink } from "@/types";
+import { NavLink, SocialLink, OfficeInfo } from "@/types";
 
 export const navLinks: NavLink[] = [
   { 
@@ -13,6 +13,7 @@ export const navLinks: NavLink[] = [
     ]
   },
   { name: "Latest Cases", href: "/cases" },
+  { name: "Materials", href: "/materials" },
   { name: "Workflow", href: "/workflow" },
   { name: "Educational", href: "/educational" },
   { 
@@ -23,5 +24,25 @@ export const navLinks: NavLink[] = [
       { title: "Visit our lab in New York", phone: "866-522-7735", email: "info.ny@dentallab.com", href: "/contact/new-york" },
       { title: "Visit our lab in Florida", phone: "866-362-4776", email: "info.fl@dentallab.com", href: "/contact/florida" },
     ]
+  },
+];
+
+export const socialLinks: SocialLink[] = [
+  { name: "Instagram", href: "https://instagram.com", icon: "instagram" },
+  { name: "Facebook", href: "https://facebook.com", icon: "facebook" },
+  { name: "LinkedIn", href: "https://linkedin.com", icon: "linkedin" },
+  { name: "YouTube", href: "https://youtube.com", icon: "youtube" },
+];
+
+export const offices: OfficeInfo[] = [
+  { 
+    location: "New York", 
+    phone: "866-522-7735", 
+    email: "info.ny@dentallab.com" 
+  },
+  { 
+    location: "Florida", 
+    phone: "866-362-4776", 
+    email: "info.fl@dentallab.com" 
   },
 ];

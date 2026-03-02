@@ -22,7 +22,6 @@ export default function NavProductCard({ item }: { item: NavCardItem }) {
           </p>
         )}
 
-        {/* Decorative "See Details" — aria-hidden since the Link handles navigation */}
         <div
           aria-hidden="true"
           className="flex items-center gap-2 py-2 px-4 w-fit rounded-full border border-white/10 bg-white/5 text-sm font-medium text-white translate-y-16 opacity-0 group-hover:translate-y-2 group-hover:opacity-100 transition-all duration-500 ease-out"

@@ -10,20 +10,15 @@ export function useFollowMouse() {
     const updateBlobPosition = () => {
       if (blobRef.current) {
         const { x, y } = mousePosRef.current;
-        const adjustedY = y + window.scrollY;
 
         blobRef.current.animate(
           {
             left: `${x}px`,
-            top: `${adjustedY}px`,
+            top: `${y}px`,
           },
           { duration: 1500, fill: "forwards" },
         );
       }
-    };
-
-    const handleScroll = () => {
-      updateBlobPosition();
     };
 
     const handleMouseMove = (event: MouseEvent) => {
@@ -38,12 +33,10 @@ export function useFollowMouse() {
       };
     }
 
-    window.addEventListener("scroll", handleScroll);
     window.addEventListener("pointermove", handleMouseMove);
 
     return () => {
       window.removeEventListener("pointermove", handleMouseMove);
-      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
