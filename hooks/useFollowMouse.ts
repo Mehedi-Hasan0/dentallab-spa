@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
 export function useFollowMouse() {
   const blobRef = useRef<HTMLDivElement>(null);
@@ -16,7 +16,7 @@ export function useFollowMouse() {
             left: `${x}px`,
             top: `${y}px`,
           },
-          { duration: 1500, fill: "forwards" },
+          { duration: 1500, fill: 'forwards' }
         );
       }
     };
@@ -26,17 +26,17 @@ export function useFollowMouse() {
       updateBlobPosition();
     };
 
-    if (typeof window !== "undefined") {
+    if (typeof window !== 'undefined') {
       mousePosRef.current = {
         x: window.innerWidth / 2,
         y: window.innerHeight / 2,
       };
     }
 
-    window.addEventListener("pointermove", handleMouseMove);
+    window.addEventListener('pointermove', handleMouseMove);
 
     return () => {
-      window.removeEventListener("pointermove", handleMouseMove);
+      window.removeEventListener('pointermove', handleMouseMove);
     };
   }, []);
 

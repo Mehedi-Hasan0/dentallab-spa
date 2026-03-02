@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { Phone, Mail } from "lucide-react";
-import { NavCardItem } from "@/types";
+import { Phone, Mail } from 'lucide-react';
+import { NavCardItem } from '@/types';
 
 export default function NavContactCard({ item }: { item: NavCardItem }) {
   return (
@@ -10,9 +10,7 @@ export default function NavContactCard({ item }: { item: NavCardItem }) {
 
       <div className="flex flex-col gap-3">
         {item.description && (
-          <p className="text-sm text-white/40 leading-relaxed">
-            {item.description}
-          </p>
+          <p className="text-sm leading-relaxed text-white/40">{item.description}</p>
         )}
 
         {item.phone && (

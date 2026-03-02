@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useState, useRef, useEffect, useCallback, RefObject } from "react";
-import useMediaQuery from "./useMediaQuery";
-import { useScrollDirection } from "./useScrollDirection";
+import { useState, useRef, useEffect, useCallback, RefObject } from 'react';
+import useMediaQuery from './useMediaQuery';
+import { useScrollDirection } from './useScrollDirection';
 
 interface UseNavDropdownReturn {
   openDropdown: string | null;
@@ -26,13 +26,10 @@ export default function useNavDropdown(): UseNavDropdownReturn {
 
   const closeDropdown = useCallback(() => setOpenDropdown(null), []);
 
-  const toggleDropdown = useCallback(
-    (e: React.MouseEvent, name: string) => {
-      e.preventDefault();
-      setOpenDropdown((prev) => (prev === name ? null : name));
-    },
-    []
-  );
+  const toggleDropdown = useCallback((e: React.MouseEvent, name: string) => {
+    e.preventDefault();
+    setOpenDropdown((prev) => (prev === name ? null : name));
+  }, []);
 
   // useScrollDirection fires closeDropdown inside the scroll event listener
   const isVisible = useScrollDirection(closeDropdown);
@@ -44,12 +41,12 @@ export default function useNavDropdown(): UseNavDropdownReturn {
         closeDropdown();
       }
     };
-    document.addEventListener("mousedown", handleOutsideClick);
-    return () => document.removeEventListener("mousedown", handleOutsideClick);
+    document.addEventListener('mousedown', handleOutsideClick);
+    return () => document.removeEventListener('mousedown', handleOutsideClick);
   }, [closeDropdown]);
 
   // Close when viewport narrows below lg breakpoint (1024px)
-  useMediaQuery("(min-width: 1024px)", (matches) => {
+  useMediaQuery('(min-width: 1024px)', (matches) => {
     if (!matches) closeDropdown();
   });
 

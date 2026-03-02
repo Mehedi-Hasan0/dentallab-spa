@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 export function useScrollDirection(onScrollDown?: () => void) {
   const [isVisible, setIsVisible] = useState(true);
@@ -8,7 +8,7 @@ export function useScrollDirection(onScrollDown?: () => void) {
 
   useEffect(() => {
     const controlNavbar = () => {
-      if (typeof window !== "undefined") {
+      if (typeof window !== 'undefined') {
         const currentScrollY = window.scrollY;
 
         if (currentScrollY > lastScrollY && currentScrollY > 100) {
@@ -23,10 +23,10 @@ export function useScrollDirection(onScrollDown?: () => void) {
       }
     };
 
-    window.addEventListener("scroll", controlNavbar);
+    window.addEventListener('scroll', controlNavbar);
 
     return () => {
-      window.removeEventListener("scroll", controlNavbar);
+      window.removeEventListener('scroll', controlNavbar);
     };
   }, [lastScrollY, onScrollDown]);
 

@@ -1,11 +1,6 @@
-import React, { FC } from "react";
-import { IconType } from "react-icons";
-import { 
-  TbBrandFacebook, 
-  TbBrandInstagram, 
-  TbBrandLinkedin, 
-  TbBrandYoutube 
-} from "react-icons/tb";
+import React, { FC } from 'react';
+import { IconType } from 'react-icons';
+import { TbBrandFacebook, TbBrandInstagram, TbBrandLinkedin, TbBrandYoutube } from 'react-icons/tb';
 
 interface SocialIconProps {
   name: string;
@@ -25,13 +20,7 @@ const SocialIcon: FC<SocialIconProps> = ({ name, size = 20, className }) => {
 
   if (!IconComponent) return null;
 
-  return (
-    <IconComponent 
-      size={size} 
-      className={className} 
-      strokeWidth={2}
-    />
-  );
+  return <IconComponent size={size} className={className} strokeWidth={2} />;
 };
 
 export default SocialIcon;

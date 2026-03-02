@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import React from "react";
-import { motion } from "motion/react";
-import Link from "next/link";
-import { ChevronDown } from "lucide-react";
-import clsx from "clsx";
+import React from 'react';
+import { motion } from 'motion/react';
+import Link from 'next/link';
+import { ChevronDown } from 'lucide-react';
+import clsx from 'clsx';
 
 interface AnimatedLinkProps {
   href?: string;
@@ -16,10 +16,10 @@ interface AnimatedLinkProps {
 }
 
 export default function AnimatedLink({
-  href = "#",
+  href = '#',
   children,
   hasDropdown,
-  className = "",
+  className = '',
   isActive,
   onClick,
 }: AnimatedLinkProps) {
@@ -30,22 +30,22 @@ export default function AnimatedLink({
         <ChevronDown
           size={20}
           className={clsx(
-            "text-white/40 group-hover:text-white transition-all duration-300",
-            isActive && "rotate-180 text-white"
+            'text-white/40 transition-all duration-300 group-hover:text-white',
+            isActive && 'rotate-180 text-white'
           )}
         />
       )}
 
       {/* Animated Underline */}
       <motion.span
-        className="absolute -bottom-1 left-0 right-0 h-[1.5px] bg-white origin-center scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"
+        className="absolute right-0 -bottom-1 left-0 h-[1.5px] origin-center scale-x-0 bg-white transition-transform duration-300 ease-out group-hover:scale-x-100"
         initial={false}
       />
     </>
   );
 
   const baseClassName = clsx(
-    "relative flex items-center gap-1 text-sm lg:text-base xl:text-lg tracking-wider font-light text-white/60 hover:text-white transition-colors group cursor-pointer",
+    'relative flex items-center gap-1 text-sm lg:text-base xl:text-lg tracking-wider font-light text-white/60 hover:text-white transition-colors group cursor-pointer',
     className
   );
 

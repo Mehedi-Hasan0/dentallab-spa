@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import { motion, AnimatePresence } from "motion/react";
-import Image from "next/image";
-import Portal from "../Portal";
-import FocusTrap from "../FocusTrap";
-import MenuProductsColumn from "./MenuProductsColumn";
-import MenuInfoColumn from "./MenuInfoColumn";
-import MenuFooter from "./MenuFooter";
+import { motion, AnimatePresence } from 'motion/react';
+import Image from 'next/image';
+import Portal from '../Portal';
+import FocusTrap from '../FocusTrap';
+import MenuProductsColumn from './MenuProductsColumn';
+import MenuInfoColumn from './MenuInfoColumn';
+import MenuFooter from './MenuFooter';
 
-import useEscapePress from "@/hooks/useEscapePress";
+import useEscapePress from '@/hooks/useEscapePress';
 
 interface FullscreenMenuProps {
   isOpen: boolean;
@@ -25,11 +25,11 @@ export default function FullscreenMenu({ isOpen, onClose }: FullscreenMenuProps)
         <Portal>
           <FocusTrap active={isOpen}>
             <motion.div
-              initial={{ opacity: 0, y: "-100%" }}
+              initial={{ opacity: 0, y: '-100%' }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: "-100%" }}
+              exit={{ opacity: 0, y: '-100%' }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="fixed inset-0 z-40 bg-black overflow-y-auto"
+              className="fixed inset-0 z-40 overflow-y-auto bg-black"
               role="dialog"
               aria-modal="true"
               aria-label="Main menu"
@@ -45,11 +45,11 @@ export default function FullscreenMenu({ isOpen, onClose }: FullscreenMenuProps)
                 />
               </div>
 
-              <div className="relative z-10 min-h-screen flex flex-col p-6 lg:p-12 xl:p-20">
+              <div className="relative z-10 flex min-h-screen flex-col p-6 lg:p-12 xl:p-20">
                 {/* Header Space filler to align with Navbar */}
                 <div className="h-(--nav-height-mobile) md:h-(--nav-height-desktop)" />
 
-                <div className="flex flex-col lg:grid lg:grid-cols-3 gap-1 grow lg:max-h-100">
+                <div className="flex grow flex-col gap-1 lg:grid lg:max-h-100 lg:grid-cols-3">
                   <MenuProductsColumn onClose={onClose} />
                   <MenuInfoColumn onClose={onClose} />
                 </div>

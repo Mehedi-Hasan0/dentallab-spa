@@ -1,6 +1,6 @@
-@import "tailwindcss";
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -45,8 +45,8 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
-  
-  --color-accent: #E63946;
+
+  --color-accent: #e63946;
 }
 
 :root {
@@ -125,46 +125,46 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-foreground text-white overflow-x-hidden box-border font-work-sans;
+    @apply bg-foreground font-work-sans box-border overflow-x-hidden text-white;
   }
 }
 
 @layer utilities {
   .main-container {
-    @apply max-w-2xl mx-auto 2xl:px-20 2xl:py-40;
+    @apply mx-auto max-w-2xl 2xl:px-20 2xl:py-40;
   }
   .glass-card {
-    @apply backdrop-blur-lg bg-black/10 border border-white/5 rounded-2xl;
+    @apply rounded-2xl border border-white/5 bg-black/10 backdrop-blur-lg;
   }
   .glass-card-2 {
-    @apply backdrop-blur-sm bg-white/10 rounded-2xl;
+    @apply rounded-2xl bg-white/10 backdrop-blur-sm;
   }
   .nav-spacing {
     @apply px-5 py-5 xl:px-10 xl:py-7 2xl:px-20;
   }
-  
+
   .glass-link {
-    @apply text-white/60 hover:text-white transition-colors duration-300;
+    @apply text-white/60 transition-colors duration-300 hover:text-white;
   }
-  
+
   .glass-border {
     @apply border border-white/10;
   }
   /* Shared nav dropdown card shell */
   .nav-card {
-    @apply relative flex flex-col justify-between h-60 p-6 backdrop-blur-lg bg-black/10 border border-white/5 rounded-2xl overflow-hidden transition-all duration-700 hover:border-white/10 cursor-pointer;
+    @apply relative flex h-60 cursor-pointer flex-col justify-between overflow-hidden rounded-2xl border border-white/5 bg-black/10 p-6 backdrop-blur-lg transition-all duration-700 hover:border-white/10;
   }
   /* Shared nav card heading */
   .nav-card-title {
-    @apply text-2xl 2xl:text-3xl font-medium text-white/90 group-hover:text-red-500 transition-colors duration-300;
+    @apply text-2xl font-medium text-white/90 transition-colors duration-300 group-hover:text-red-500 2xl:text-3xl;
   }
   /* Shared hover shimmer overlay */
   .nav-card-overlay {
-    @apply absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none;
+    @apply pointer-events-none absolute inset-0 bg-white/5 opacity-0 transition-opacity duration-700 group-hover:opacity-100;
   }
   /* Contact link rows (tel / mailto) */
   .nav-contact-link {
-    @apply flex items-center gap-3 text-white/40 hover:text-white transition-colors w-fit;
+    @apply flex w-fit items-center gap-3 text-white/40 transition-colors hover:text-white;
   }
 }
 

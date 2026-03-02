@@ -1,12 +1,8 @@
-"use client";
+'use client';
 
-import { useSmoothScroll } from "@/hooks/useSmoothScroll";
+import { useSmoothScroll } from '@/hooks/useSmoothScroll';
 
-export function SmoothScrollProvider({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export function SmoothScrollProvider({ children }: { children: React.ReactNode }) {
   useSmoothScroll();
 
   return <>{children}</>;
