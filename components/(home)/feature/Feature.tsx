@@ -38,7 +38,7 @@ export default function Feature() {
         </div>
 
         <ul
-          className="grid min-h-fit grid-cols-1 gap-1 md:grid-cols-2 lg:min-h-100 lg:grid-cols-4 lg:gap-1 xl:min-h-124"
+          className="grid min-h-fit grid-cols-1 gap-1 md:grid-cols-2 lg:min-h-100 lg:grid-cols-4 lg:gap-1 xl:min-h-114"
           role="list"
         >
           {/* Column 1: Large Card */}

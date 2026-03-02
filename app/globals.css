@@ -131,10 +131,10 @@
 
 @layer utilities {
   .main-container {
-    @apply mx-auto max-w-screen-2xl px-5 py-20 lg:px-14 lg:py-28 xl:px-16 xl:py-32 2xl:px-20 2xl:py-40;
+    @apply mx-auto max-w-screen-2xl px-5 py-12 md:pt-20 md:pb-12 lg:px-14 lg:pt-28 lg:pb-16 xl:px-16 xl:pt-32 xl:pb-18 2xl:px-20 2xl:pt-40 2xl:pb-20;
   }
   .section-spacing-1 {
-    @apply 2xl:px-40 2xl:py-20;
+    @apply px-5 py-10 lg:px-14 lg:py-16 xl:px-16 xl:py-18 2xl:px-20 2xl:py-20;
   }
   /* GLASS CARD */
   .glass-card {

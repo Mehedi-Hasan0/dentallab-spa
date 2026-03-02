@@ -1,12 +1,13 @@
 import Feature from '@/components/(home)/feature/Feature';
 import Hero from '@/components/(home)/hero/Hero';
+import Stats from '@/components/(home)/stats/Stats';
 
 export default function Home() {
   return (
     <main>
       <Hero />
       <Feature />
-      <div className="min-h-[300vh]"></div>
+      <Stats />
     </main>
   );
 }

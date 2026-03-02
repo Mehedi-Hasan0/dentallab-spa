@@ -43,3 +43,15 @@ export type FeatureItem = {
     ariaLabel?: string;
   };
 };
+
+export type StatItem = {
+  value: number;
+  suffix?: string;
+  description: string;
+};
+
+export type StatsContent = {
+  title: string;
+  description: string;
+  items: StatItem[];
+};

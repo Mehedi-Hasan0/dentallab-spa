@@ -1,4 +1,4 @@
-import { NavLink, SocialLink, OfficeInfo, FeatureItem } from '@/types';
+import { NavLink, SocialLink, OfficeInfo, FeatureItem, StatsContent } from '@/types';
 
 export const navLinks: NavLink[] = [
   {
@@ -148,4 +148,30 @@ export const featuresContent = {
       variant: 'graphic',
     },
   ] as FeatureItem[],
+};
+
+export const statsContent: StatsContent = {
+  title: 'Why Top Dentists Trust Us?',
+  description:
+    'Not just restorations — precision-engineered results, seamless support, and partnerships that elevate your practice',
+  items: [
+    {
+      value: 1700,
+      suffix: '+',
+      description:
+        'Dentists trust us for exceptional quality, reliable service, and lasting partnerships',
+    },
+    {
+      value: 900000,
+      suffix: '+',
+      description:
+        'Restorations delivered with precision and care—trusted by leading dentists nationwide',
+    },
+    {
+      value: 62,
+      suffix: '%',
+      description:
+        'Cases Submitted Digitally — Trusted by Tech-Forward Practices Using iTero, TRIOS, Medit, and More',
+    },
+  ],
 };
