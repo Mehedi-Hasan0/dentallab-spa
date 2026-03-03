@@ -1,16 +1,25 @@
 'use client';
 
 import Image from 'next/image';
+import { cn } from '@/lib/utils';
 
 interface BackgroundVideoProps {
   videoSrc: string;
   posterSrc: string;
   posterAlt: string;
+  overlayClassName?: string;
+  className?: string;
 }
 
-export function BackgroundVideo({ videoSrc, posterSrc, posterAlt }: BackgroundVideoProps) {
+export function BackgroundVideo({
+  videoSrc,
+  posterSrc,
+  posterAlt,
+  overlayClassName,
+  className,
+}: BackgroundVideoProps) {
   return (
-    <div className="absolute inset-0 -z-10 h-full w-full overflow-hidden">
+    <div className={cn('absolute inset-0 -z-10 h-full w-full overflow-hidden', className)}>
       <Image
         src={posterSrc}
         alt={posterAlt}
@@ -34,7 +43,10 @@ export function BackgroundVideo({ videoSrc, posterSrc, posterAlt }: BackgroundVi
       </video>
 
       {/* Overlay for readability */}
-      <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
+      <div
+        className={cn('absolute inset-0 z-20 bg-black/20', overlayClassName)}
+        aria-hidden="true"
+      />
     </div>
   );
 }

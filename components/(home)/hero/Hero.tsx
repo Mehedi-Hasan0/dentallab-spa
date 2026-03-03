@@ -4,7 +4,7 @@ import { heroContent } from '@/constants';
 import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 import { motion, useScroll, useTransform, useSpring } from 'motion/react';
-import { BackgroundVideo } from './BackgroundVideo';
+import { BackgroundVideo } from '@/components/shared/BackgroundVideo';
 import { HeroGrid } from './HeroGrid';
 import { PartnerLogos } from './PartnerLogos';
 

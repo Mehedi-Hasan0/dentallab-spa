@@ -129,3 +129,24 @@ export type ProductsContent = {
   description: string;
   items: ProductItem[];
 };
+export type ContactInfoCard = {
+  title: string;
+  phone: string;
+  email: string;
+  address: string;
+};
+
+export type ContactContent = {
+  title: string;
+  description: string;
+  videoSrc: string;
+  posterSrc: string;
+  checklist: string[];
+  offices: {
+    title: string;
+    location: string;
+    phone: string;
+    email: string;
+    address: string;
+  }[];
+};

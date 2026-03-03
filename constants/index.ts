@@ -7,6 +7,7 @@ import {
   ArchRestorationContent,
   AboutUsContent,
   ProductsContent,
+  ContactContent,
 } from '@/types';
 
 export const navLinks: NavLink[] = [
@@ -335,6 +336,36 @@ export const productsContent: ProductsContent = {
         { src: '/images/product/product-8.webp', alt: 'Retainer restoration example 2' },
         { src: '/images/product/product-13.webp', alt: 'Retainer restoration example 3' },
       ],
+    },
+  ],
+};
+
+export const contactContent: ContactContent = {
+  title: "Let's Restore Smiles Together",
+  description: 'Have a case to discuss?',
+  videoSrc: '/videos/contact-video.mp4',
+  posterSrc: '/images/contact-us-video-poster.webp',
+  checklist: [
+    'Submit & Track cases online 24/7',
+    'View your account balance & pay invoices',
+    'Submit photos fast & easy',
+    'Receive email confirmation & further updates',
+    'View impression reports',
+  ],
+  offices: [
+    {
+      title: 'Connect with our team in New York',
+      location: 'New York',
+      phone: '866-522-7735',
+      email: 'info.ny@dentallab.com',
+      address: '5302 68th St, Maspeth, New York 11378',
+    },
+    {
+      title: 'Connect with our team in Florida',
+      location: 'Florida',
+      phone: '866-362-4776',
+      email: 'info.fl@dentallab.com',
+      address: '3752 SW 30th Ave, Fort Lauderdale, FL 33312',
     },
   ],
 };
