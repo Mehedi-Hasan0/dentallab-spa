@@ -6,6 +6,7 @@ import {
   StatsContent,
   ArchRestorationContent,
   AboutUsContent,
+  ProductsContent,
 } from '@/types';
 
 export const navLinks: NavLink[] = [
@@ -282,6 +283,57 @@ export const aboutUsContent: AboutUsContent = {
             'Our technicians are certified experts with extensive training in digital design, esthetic restorations, and full-arch workflows. With a deep understanding of clinical priorities, they approach every case with precision, consistency, and a commitment to excellence. Through continuous education and collaboration with doctors, they ensure restorations are delivered ready to seat, reducing chair time and elevating the quality of every outcome.',
           variant: 'text',
         },
+      ],
+    },
+  ],
+};
+export const productsContent: ProductsContent = {
+  title: 'Our Products',
+  description:
+    'We offer a comprehensive range of dental restorations and appliances, including fixed prosthetics, implants, removables, and retainers',
+  items: [
+    {
+      id: 'fixed',
+      title: 'Fixed',
+      number: '01',
+      dots: [true, false, false, false],
+      previewImages: [
+        { src: '/images/product/product-1.webp', alt: 'Fixed restoration example 1' },
+        { src: '/images/product/product-2.webp', alt: 'Fixed restoration example 2' },
+        { src: '/images/product/product-10.webp', alt: 'Fixed restoration example 3' },
+      ],
+    },
+    {
+      id: 'implants',
+      title: 'Implants',
+      number: '02',
+      dots: [true, true, false, false],
+      previewImages: [
+        { src: '/images/product/product-3.webp', alt: 'Implant restoration example 1' },
+        { src: '/images/product/product-4.webp', alt: 'Implant restoration example 2' },
+        { src: '/images/product/product-11.webp', alt: 'Implant restoration example 3' },
+      ],
+    },
+    {
+      id: 'removables',
+      title: 'Removables',
+      number: '03',
+      dots: [true, true, true, false],
+      previewImages: [
+        { src: '/images/product/product-5.webp', alt: 'Removable restoration example 1' },
+        { src: '/images/product/product-6.webp', alt: 'Removable restoration example 2' },
+        { src: '/images/product/product-12.webp', alt: 'Removable restoration example 3' },
+      ],
+    },
+    {
+      id: 'retainers',
+      title: 'Retainers',
+      number: '04',
+      dots: [true, true, true, true],
+      previewImages: [
+        { src: '/images/product/product-7.webp', alt: 'Retainer restoration example 1' },
+        { src: '/images/product/product-8.webp', alt: 'Retainer restoration example 2' },
+        { src: '/images/product/product-13.webp', alt: 'Retainer restoration example 3' },
       ],
     },
   ],

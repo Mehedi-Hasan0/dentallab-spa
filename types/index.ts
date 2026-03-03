@@ -113,3 +113,19 @@ export type AboutUsContent = {
     items: FeatureItem[];
   }[];
 };
+export type ProductItem = {
+  id: string;
+  title: string;
+  number: string;
+  dots: boolean[];
+  previewImages: {
+    src: string;
+    alt: string;
+  }[];
+};
+
+export type ProductsContent = {
+  title: string;
+  description: string;
+  items: ProductItem[];
+};
