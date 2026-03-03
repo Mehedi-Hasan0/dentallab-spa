@@ -36,7 +36,7 @@ export type FeatureItem = {
   description?: string;
   image?: string;
   imageAlt?: string;
-  variant?: 'default' | 'large' | 'graphic';
+  variant?: 'default' | 'large' | 'graphic' | 'text';
   cta?: {
     text: string;
     href: string;
@@ -84,4 +84,32 @@ export type ArchRestorationContent = {
   description: string;
   videoSrc: string;
   cards: ArchCard[];
+};
+
+export type AboutHeroCardData = {
+  image: string;
+  imageAlt: string;
+  hoverHeadline: string;
+  hoverSubtext: string;
+  cta: {
+    text: string;
+    href: string;
+    ariaLabel: string;
+  };
+};
+
+export type AboutInfoCardData = {
+  id: string;
+  title: string;
+  description: string;
+};
+
+export type AboutUsContent = {
+  title: string;
+  description: string;
+  heroCard: AboutHeroCardData;
+  columns: {
+    id: string;
+    items: FeatureItem[];
+  }[];
 };

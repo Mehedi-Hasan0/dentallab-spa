@@ -36,7 +36,7 @@ export default function StatCard({ stat, className }: StatCardProps) {
     <article
       ref={ref}
       className={clsx(
-        'glass-card-2 flex flex-col items-center justify-center p-6 text-center transition-all duration-300 md:items-start md:text-left lg:p-8 2xl:p-9',
+        'glass-card-2 flex flex-col items-center justify-center rounded-2xl p-6 text-center transition-all duration-300 md:items-start md:text-left lg:p-8 2xl:p-9',
         className
       )}
     >

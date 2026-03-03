@@ -4,24 +4,27 @@ import Link from 'next/link';
 import clsx from 'clsx';
 import { MoveUpRight } from 'lucide-react';
 
-interface FeatureCardProps {
+interface GridCardProps {
   feature: FeatureItem;
   className?: string;
 }
 
-export default function FeatureCard({ feature, className }: FeatureCardProps) {
+export default function GridCard({ feature, className }: GridCardProps) {
   const isLarge = feature.variant === 'large';
   const isGraphic = feature.variant === 'graphic';
+  const isText = feature.variant === 'text';
 
   return (
     <article
       className={clsx(
-        'group glass-card-2 relative flex h-full flex-col overflow-hidden p-4 transition-all duration-300 lg:p-5 xl:p-6',
-        isGraphic && 'justify-end',
-        !isLarge && !isGraphic && 'items-center justify-center text-center',
+        'group glass-card-2 relative flex h-full flex-col overflow-hidden rounded-2xl p-4 transition-all duration-300 lg:p-5 xl:p-6',
+        (isGraphic || isText) && 'justify-end',
+        !isLarge && !isGraphic && !isText && 'items-center justify-center text-center',
         className
       )}
-      aria-labelledby={feature.title ? `feature-title-${feature.title}` : undefined}
+      aria-labelledby={
+        feature.title ? `feature-title-${feature.title.replace(/\s+/g, '-')}` : undefined
+      }
     >
       {/* Background Image for Graphic Variant */}
       {isGraphic && feature.image && (
@@ -39,7 +42,7 @@ export default function FeatureCard({ feature, className }: FeatureCardProps) {
         {isLarge ? (
           <div className="flex h-full flex-col justify-between gap-12">
             <h3
-              id={`feature-title-${feature.title}`}
+              id={`feature-title-${feature.title?.replace(/\s+/g, '-')}`}
               className="text-xl font-medium whitespace-pre-line text-white/90 md:text-xl lg:text-2xl"
             >
               {feature.title}
@@ -68,16 +71,21 @@ export default function FeatureCard({ feature, className }: FeatureCardProps) {
           <div
             className={clsx(
               'flex h-full flex-col',
-              isGraphic ? 'justify-end' : 'items-center justify-center'
+              isGraphic || isText ? 'justify-end' : 'items-center justify-center'
             )}
           >
             {feature.title && (
               <h3
-                id={`feature-title-${feature.title}`}
+                id={`feature-title-${feature.title.replace(/\s+/g, '-')}`}
                 className={clsx('font-medium text-white/90 md:whitespace-pre-line', 'feature-text')}
               >
                 {feature.title}
               </h3>
+            )}
+            {isText && feature.description && (
+              <p className="text-xs leading-relaxed text-white/55 md:text-sm">
+                {feature.description}
+              </p>
             )}
           </div>
         )}

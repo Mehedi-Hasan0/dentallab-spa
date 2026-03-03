@@ -15,7 +15,11 @@ export default function MenuInfoColumn({ onClose }: MenuInfoColumnProps) {
 
   return (
     <section
-      className={clsx('flex grow flex-col justify-between lg:col-span-2', 'glass-card-2', 'p-8')}
+      className={clsx(
+        'flex grow flex-col justify-between rounded-2xl lg:col-span-2',
+        'glass-card-2',
+        'p-8'
+      )}
     >
       <ul className="flex flex-col items-start gap-6 md:items-end lg:gap-5">
         {otherLinks.map((link) => (

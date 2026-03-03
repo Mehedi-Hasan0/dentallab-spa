@@ -93,11 +93,11 @@ export default function ArchRestoration() {
       aria-labelledby="arch-heading"
     >
       {/* Sticky viewport */}
-      <div className="sticky top-0 flex h-screen w-full items-center justify-center overflow-hidden pt-[80px] md:pt-14">
+      <div className="sticky top-0 flex h-screen w-full items-center justify-center overflow-hidden pt-20 md:pt-14 lg:pt-10">
         {/* Section header */}
         <motion.div
           style={{ opacity: headerOpacity, y: headerY }}
-          className="absolute top-[80px] z-40 flex w-full flex-col items-center gap-4 px-5 pt-8 text-center md:top-[92px] md:gap-6 md:pt-10"
+          className="absolute top-[80px] z-40 flex w-full flex-col items-center gap-4 px-5 pt-8 text-center md:top-16 md:gap-6 md:pt-10 2xl:top-24"
         >
           <h2 id="arch-heading" className="title-text leading-tight whitespace-pre-line">
             {title}

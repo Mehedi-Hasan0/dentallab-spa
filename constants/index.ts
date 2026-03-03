@@ -5,6 +5,7 @@ import {
   FeatureItem,
   StatsContent,
   ArchRestorationContent,
+  AboutUsContent,
 } from '@/types';
 
 export const navLinks: NavLink[] = [
@@ -234,6 +235,54 @@ export const archRestorationContent: ArchRestorationContent = {
       lineHeight: '34%',
       position: { bottom: '8%', right: '0%' },
       linePosition: { bottom: '6%', right: '24%' },
+    },
+  ],
+};
+
+export const aboutUsContent: AboutUsContent = {
+  title: 'About us',
+  description:
+    'We are a full-service dental laboratory committed to delivering high-quality, state-of-the-art dental restorations with exceptional value.',
+  heroCard: {
+    image: '/images/about-1.webp',
+    imageAlt:
+      'Dental lab delivery vehicle on location — committed to fast, reliable service across the nation',
+    hoverHeadline: 'Need help with a complex case?',
+    hoverSubtext: 'Our team is ready to support you',
+    cta: {
+      text: 'Contact us',
+      href: '#contact',
+      ariaLabel: 'Contact our dental lab team for help with complex cases',
+    },
+  },
+  columns: [
+    {
+      id: 'partners',
+      items: [
+        {
+          title: 'Our Partners',
+          variant: 'default',
+        },
+        {
+          description:
+            'We work closely with dentists who demand excellence in materials, results, and ongoing support. From zirconia and lithium disilicate to PEEK and titanium bars, we use only clinically proven materials from trusted brands to ensure every restoration meets the highest standards. Beyond restorations, we invest in your growth. Our CE-accredited courses and clinical resources help partners stay current with the latest techniques in digital dentistry, full-arch restorations, and material selection.',
+          variant: 'text',
+        },
+      ],
+    },
+    {
+      id: 'technicians',
+      items: [
+        {
+          title: 'Our Technicians',
+          variant: 'default',
+        },
+        {
+          description:
+            'Our technicians are certified experts with extensive training in digital design, esthetic restorations, and full-arch workflows. With a deep understanding of clinical priorities, they approach every case with precision, consistency, and a commitment to excellence. Through continuous education and collaboration with doctors, they ensure restorations are delivered ready to seat, reducing chair time and elevating the quality of every outcome.',
+          variant: 'text',
+        },
+      ],
     },
   ],
 };

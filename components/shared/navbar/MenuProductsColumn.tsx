@@ -18,7 +18,7 @@ export default function MenuProductsColumn({ onClose }: MenuProductsColumnProps)
       )}
       aria-labelledby="menu-products-heading"
     >
-      <div className={clsx('glass-card-2 p-8', 'group-hover/card:rounded-b-none')}>
+      <div className={clsx('glass-card-2 rounded-2xl p-8', 'group-hover/card:rounded-b-none')}>
         <h2
           id="menu-products-heading"
           className="text-xl font-medium text-white/90 md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl"
@@ -28,7 +28,7 @@ export default function MenuProductsColumn({ onClose }: MenuProductsColumnProps)
       </div>
       <div
         className={clsx(
-          'glass-card-2 flex grow flex-col justify-end px-8 py-6',
+          'glass-card-2 flex grow flex-col justify-end rounded-2xl px-8 py-6',
           'group-hover/card:rounded-t-none'
         )}
       >
