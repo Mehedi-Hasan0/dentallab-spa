@@ -34,17 +34,18 @@ export default function Products() {
           description={productsContent.description}
         />
 
-        <div className="mt-10 mb-1 grid grid-cols-1 gap-1.5 md:gap-2 lg:mt-16 lg:grid-cols-4 lg:gap-1">
+        <ul className="mt-10 mb-1 grid grid-cols-1 gap-1.5 md:gap-2 lg:mt-16 lg:grid-cols-4 lg:gap-1">
           {productsContent.items.map((product) => (
-            <ProductCard
-              key={product.id}
-              product={product}
-              isActive={activeProductId === product.id}
-              onHover={() => setActiveProductId(product.id)}
-              onLeave={() => setActiveProductId(null)}
-            />
+            <li key={product.id}>
+              <ProductCard
+                product={product}
+                isActive={activeProductId === product.id}
+                onHover={() => setActiveProductId(product.id)}
+                onLeave={() => setActiveProductId(null)}
+              />
+            </li>
           ))}
-        </div>
+        </ul>
 
         <div className="hidden lg:block">
           <ProductPreview images={previewImages} />

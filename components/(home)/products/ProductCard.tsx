@@ -14,24 +14,20 @@ interface ProductCardProps {
 
 export default function ProductCard({ product, isActive, onHover, onLeave }: ProductCardProps) {
   return (
-    <motion.div
+    <motion.button
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       onMouseEnter={onHover}
       onMouseLeave={onLeave}
+      onFocus={onHover}
+      onBlur={onLeave}
+      aria-expanded={isActive}
+      aria-controls="product-preview-area"
       className={clsx(
-        'group relative cursor-pointer overflow-hidden rounded-2xl p-5 transition-all duration-500 md:p-6',
+        'group relative w-full cursor-pointer overflow-hidden rounded-2xl p-5 text-left transition-all duration-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/50 md:p-6',
         isActive ? 'bg-white/10' : 'bg-white/5 hover:bg-white/10'
       )}
-      role="button"
-      tabIndex={0}
-      aria-label={`View ${product.title} details`}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          onHover();
-        }
-      }}
     >
       <div className="mb-8 flex items-center justify-between md:mb-10 lg:mb-12">
         <div className="flex gap-1.5" aria-hidden="true">
@@ -75,9 +71,12 @@ export default function ProductCard({ product, isActive, onHover, onLeave }: Pro
       </h3>
 
       {/* Mobile Icon: Always visible at bottom right */}
-      <div className="absolute right-6 bottom-6 flex h-8 w-8 items-center justify-center rounded-full bg-white text-black lg:hidden">
+      <div
+        className="absolute right-6 bottom-6 flex h-8 w-8 items-center justify-center rounded-full bg-white text-black lg:hidden"
+        aria-hidden="true"
+      >
         <ArrowRight size={16} strokeWidth={2.5} />
       </div>
-    </motion.div>
+    </motion.button>
   );
 }

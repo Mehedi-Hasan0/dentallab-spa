@@ -15,7 +15,14 @@ export default function ProductPreview({ images }: ProductPreviewProps) {
   const [img1, img2, img3] = images;
 
   return (
-    <div className="grid h-[400px] grid-cols-1 gap-4 md:h-[500px] md:grid-cols-3 md:gap-1">
+    <div
+      id="product-preview-area"
+      className="grid h-100 grid-cols-1 gap-4 md:h-124 md:grid-cols-3 md:gap-1"
+      aria-live="polite"
+      aria-atomic="true"
+    >
+      <h3 className="sr-only">Product Visual Previews</h3>
+
       {/* Left Column: Stacked items */}
       <div className="grid h-full grid-rows-2 gap-4 md:col-span-1 md:gap-1">
         <div className="relative overflow-hidden rounded-2xl bg-white/5">
