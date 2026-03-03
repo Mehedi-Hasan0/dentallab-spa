@@ -33,7 +33,8 @@ export default function GridCard({ feature, className }: GridCardProps) {
           alt={feature.imageAlt || feature.title || 'Dental laboratory feature image'}
           fill
           className="object-scale-down"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+          quality={60}
+          sizes="(max-width: 767px) 50vw, (max-width: 1023px) 50vw, (max-width: 1535px) 25vw, 384px"
         />
       )}
 

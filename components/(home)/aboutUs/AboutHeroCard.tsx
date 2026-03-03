@@ -41,7 +41,8 @@ export default function AboutHeroCard({ data, className }: AboutHeroCardProps) {
             'group-hover:scale-105 group-hover:blur-sm',
             'group-focus-within:scale-105 group-focus-within:blur-sm'
           )}
-          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
+          quality={60}
+          sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, (max-width: 1535px) 33vw, 512px"
         />
       </div>
 

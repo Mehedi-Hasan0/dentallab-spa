@@ -122,13 +122,16 @@ export default function ArchRestoration() {
             {/* muted + playsInline for auto-seek on mobile */}
             <video
               ref={videoRef}
-              src={videoSrc}
               muted
               playsInline
               preload="auto"
+              // @ts-ignore
+              fetchPriority="high"
               aria-label="Animated breakdown of the full arch restoration components"
               className="h-full w-full object-cover"
-            />
+            >
+              <source src={videoSrc} type="video/mp4" />
+            </video>
 
             {/* Info cards */}
             <div aria-label="Component details" className="absolute inset-0 z-20 hidden lg:block">
