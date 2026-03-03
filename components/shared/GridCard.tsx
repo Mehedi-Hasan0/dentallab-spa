@@ -26,6 +26,12 @@ export default function GridCard({ feature, className }: GridCardProps) {
         feature.title ? `feature-title-${feature.title.replace(/\s+/g, '-')}` : undefined
       }
     >
+      {/* background pattern */}
+      <div
+        className='absolute inset-0 z-0 bg-[url("/images/bg-img/bg-pattern-2.webp")] bg-cover bg-center bg-no-repeat opacity-30 blur-xs transition-transform duration-500 group-hover:scale-110'
+        aria-hidden="true"
+      />
+
       {/* Background Image for Graphic Variant */}
       {isGraphic && feature.image && (
         <Image
