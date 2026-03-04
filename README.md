@@ -1,6 +1,6 @@
 # Next.js Dental Lab SPA - Technical Assessment
 
-A high-performance, single-page rebuild of the Dentallab.com homepage, focused on premium user experience, semantic, and modern frontend architecture.
+**Live Demo**: [https://dentallab-spa.vercel.app](https://dentallab-spa.vercel.app)
 
 ---
 
