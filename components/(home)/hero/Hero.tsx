@@ -82,7 +82,7 @@ export default function Hero() {
                 <Link
                   href={heroContent.cta.href}
                   aria-label={heroContent.cta.ariaLabel}
-                  className="group flex h-14 items-center gap-4 rounded-full border border-white/20 bg-white/5 px-6 backdrop-blur-md transition-all duration-500 hover:border-white/50 hover:bg-white/10 sm:h-16 sm:px-8"
+                  className="group btn-pill"
                 >
                   <span className="text-base font-medium text-white sm:text-lg">
                     {heroContent.cta.text}

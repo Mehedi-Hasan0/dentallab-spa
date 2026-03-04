@@ -12,7 +12,7 @@ export default function AboutUs() {
 
   return (
     <section id="about" className="main-container bg-foreground" aria-labelledby="about-heading">
-      <div className="flex flex-col gap-10 lg:gap-16">
+      <div className="section-inner">
         {/* Section Header */}
         <SectionHeader headingId="about-heading" title={title} description={description} />
 
@@ -43,7 +43,7 @@ export default function AboutUs() {
               className="group flex flex-col md:col-span-1 lg:min-h-full"
               role="listitem"
             >
-              <div className="flex h-full w-full flex-col transition-all duration-300 ease-in-out lg:gap-1 lg:group-hover:gap-0">
+              <div className="card-stack-hover">
                 <GridCard
                   feature={column.items[0]}
                   className="h-16! rounded-b-none md:h-20! lg:h-24! lg:rounded-b-2xl lg:group-hover:rounded-b-none"

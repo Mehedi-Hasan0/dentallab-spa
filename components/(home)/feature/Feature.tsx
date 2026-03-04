@@ -15,7 +15,7 @@ export default function Feature() {
       className="main-container bg-foreground"
       aria-labelledby="features-heading"
     >
-      <div className="flex flex-col gap-12 lg:gap-20">
+      <div className="section-inner-large">
         {/* Header Section */}
         <SectionHeader headingId="features-heading" title={title} description={description} />
 

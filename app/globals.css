@@ -184,6 +184,28 @@
   .feature-text {
     @apply text-sm md:text-base lg:text-lg xl:text-[1.375em];
   }
+
+  .section-inner {
+    @apply flex flex-col gap-10 lg:gap-16;
+  }
+  .section-inner-large {
+    @apply flex flex-col gap-12 lg:gap-20;
+  }
+  .card-stack-hover {
+    @apply flex h-full w-full flex-col transition-all duration-300 ease-in-out lg:gap-1 lg:group-hover:gap-0;
+  }
+  .card-stack-hover-alt {
+    @apply flex h-full w-full flex-col transition-all duration-300 ease-in-out md:min-h-74 lg:min-h-auto lg:gap-1 lg:group-hover:gap-0;
+  }
+  .glass-panel {
+    @apply relative z-10 w-full rounded-3xl bg-black/60 p-4 backdrop-blur-xl md:p-5 lg:max-w-lg lg:p-6 2xl:min-w-120 2xl:p-8;
+  }
+  .btn-pill {
+    @apply flex h-14 items-center gap-4 rounded-full border border-white/20 bg-white/5 px-6 backdrop-blur-md transition-all duration-500 hover:border-white/50 hover:bg-white/10 sm:h-16 sm:px-8;
+  }
+  .btn-pill-white {
+    @apply h-14 w-full rounded-full bg-white text-base font-medium text-black transition-all duration-300 hover:bg-white/90 md:text-lg;
+  }
 }
 
 /* Others */

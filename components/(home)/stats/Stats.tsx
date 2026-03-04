@@ -15,7 +15,7 @@ export default function Stats() {
       className={clsx('main-container bg-foreground', 'section-spacing-1')}
       aria-labelledby="stats-heading"
     >
-      <div className="flex flex-col gap-12 lg:gap-20">
+      <div className="section-inner-large">
         <div className="flex flex-col items-center justify-center gap-4 md:gap-6">
           <motion.h2
             id="stats-heading"

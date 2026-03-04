@@ -35,7 +35,7 @@ export default function ContactForm() {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      className="relative z-10 w-full rounded-3xl bg-black/60 p-4 backdrop-blur-xl md:p-5 lg:max-w-lg lg:p-6 2xl:min-w-120 2xl:p-8"
+      className="glass-panel"
     >
       <h2 className="mb-10 text-2xl font-medium tracking-tight text-white sm:text-3xl lg:text-[2.5em]">
         Have a case to <br className="hidden lg:block" /> discuss?
@@ -81,10 +81,7 @@ export default function ContactForm() {
             rows={3}
           />
 
-          <Button
-            type="submit"
-            className="group mt-4 h-14 w-full rounded-full bg-white text-base font-medium text-black transition-all duration-300 hover:bg-white/90 md:text-lg"
-          >
+          <Button type="submit" className="group btn-pill-white">
             Connect with Our Team
             <div className="ml-2 flex h-8 w-8 items-center justify-center rounded-full bg-black/10 transition-transform duration-300 group-hover:rotate-45">
               <ArrowUpRight size={18} />
