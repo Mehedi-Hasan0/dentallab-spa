@@ -4,6 +4,7 @@ import './globals.css';
 import CursorEffect from '@/components/shared/CursorEffect';
 import Navbar from '@/components/shared/navbar/Navbar';
 import { SmoothScrollProvider } from '@/components/shared/SmoothScrollProvider';
+import { Toaster } from '@/components/ui/sonner';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -34,6 +35,7 @@ export default function RootLayout({
           <CursorEffect />
           <Navbar />
           {children}
+          <Toaster />
         </SmoothScrollProvider>
       </body>
     </html>

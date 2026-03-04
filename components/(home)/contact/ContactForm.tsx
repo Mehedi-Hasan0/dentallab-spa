@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Form } from '@/components/ui/form';
 import { ArrowUpRight } from 'lucide-react';
 import FormField from '@/components/shared/FormField';
+import { toast } from 'sonner';
 
 export default function ContactForm() {
   const form = useForm<ContactFormValues>({
@@ -24,7 +25,7 @@ export default function ContactForm() {
 
   function onSubmit(values: ContactFormValues) {
     console.log(values);
-    alert('Thank you! Your message has been sent.');
+    toast.success('Thank you! Your message has been sent.');
     form.reset();
   }
 

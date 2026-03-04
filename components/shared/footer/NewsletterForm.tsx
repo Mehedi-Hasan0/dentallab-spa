@@ -7,6 +7,8 @@ import { ArrowUpRight } from 'lucide-react';
 import { Form } from '@/components/ui/form';
 import { Button } from '@/components/ui/button';
 import FormField from '@/components/shared/FormField';
+import { toast } from 'sonner';
+
 import { newsletterSchema, type NewsletterFormValues } from '@/schema';
 
 export function NewsletterForm() {
@@ -19,6 +21,7 @@ export function NewsletterForm() {
 
   function onSubmit(values: NewsletterFormValues) {
     console.log('Newsletter subscription:', values);
+    toast.success('Subscription successful! Welcome to our newsletter.');
     form.reset();
   }
 
