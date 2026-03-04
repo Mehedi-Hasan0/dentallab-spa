@@ -158,9 +158,11 @@ export default function ArchRestoration() {
             <Link
               href="#"
               aria-label="See full details of arch restoration products"
-              className="group flex h-14 items-center gap-4 rounded-full border border-white/20 bg-white/5 px-6 backdrop-blur-md transition-all duration-500 hover:border-white/50 hover:bg-white/10 sm:px-8 lg:h-16"
+              className="group flex h-14 min-w-20 items-center gap-4 rounded-full border border-white/20 bg-white/5 px-6 backdrop-blur-md transition-all duration-500 hover:border-white/50 hover:bg-white/10 sm:px-8 lg:h-16"
             >
-              <span className="text-base font-medium text-white lg:text-lg">See details</span>
+              <span className="text-base font-medium whitespace-nowrap text-white lg:text-lg">
+                See details
+              </span>
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 transition-transform duration-500 group-hover:rotate-45 lg:h-10 lg:w-10">
                 <ArrowUpRight className="h-5 w-5 text-white" />
               </div>
