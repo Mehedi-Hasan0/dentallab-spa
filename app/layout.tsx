@@ -93,7 +93,9 @@ export default function RootLayout({
         <JsonLd />
         <SmoothScrollProvider>
           <Toaster />
-          <CursorEffect />
+          <div className="hidden lg:block">
+            <CursorEffect />
+          </div>
           <Navbar />
           {children}
           <Footer />
