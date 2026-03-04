@@ -150,3 +150,15 @@ export type ContactContent = {
     address: string;
   }[];
 };
+export type TestimonialItem = {
+  quote: string;
+  author: string;
+  role: string;
+  image: string;
+};
+
+export type TestimonialsContent = {
+  title: string;
+  description: string;
+  items: TestimonialItem[];
+};

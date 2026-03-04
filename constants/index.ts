@@ -8,6 +8,7 @@ import {
   AboutUsContent,
   ProductsContent,
   ContactContent,
+  TestimonialsContent,
 } from '@/types';
 
 export const navLinks: NavLink[] = [
@@ -366,6 +367,48 @@ export const contactContent: ContactContent = {
       phone: '866-362-4776',
       email: 'info.fl@dentallab.com',
       address: '3752 SW 30th Ave, Fort Lauderdale, FL 33312',
+    },
+  ],
+};
+
+export const testimonialsContent: TestimonialsContent = {
+  title: 'What Our Clients Say',
+  description: '— Trusted by Professionals, Proven by Results —',
+  items: [
+    {
+      quote:
+        'IPro always goes above and beyond for our patients. I’ve been extremely happy with their service and have referred several colleagues to them.',
+      author: 'Nichole Lamb',
+      role: 'Brightview Family Dental',
+      image: '/images/client/client-1.webp',
+    },
+    {
+      quote:
+        'The precision and turnaround time are unmatched. Their digital workflow has seamlessly integrated with our practice, saving us hours of chair time.',
+      author: 'Dr. James Wilson',
+      role: 'Wilson Dental Group',
+      image: '/images/client/client-2.webp',
+    },
+    {
+      quote:
+        'Exceptional quality and communication. Every case comes back with a perfect fit and natural esthetics that our patients absolutely love.',
+      author: 'Sarah Chen',
+      role: 'Elite Esthetics Dentistry',
+      image: '/images/client/client-3.webp',
+    },
+    {
+      quote:
+        'They are more than just a lab; they are a partner in our success. Their technical support for complex full-arch cases has been invaluable.',
+      author: 'Dr. Robert Miller',
+      role: 'Miller Restorative Center',
+      image: '/images/client/client-4.webp',
+    },
+    {
+      quote:
+        'Consistency is key in dentistry, and this lab delivers every single time. Their attention to detail in cosmetic cases is truly impressive.',
+      author: 'Emily Rodriguez',
+      role: 'Rodriguez Cosmetic Dental',
+      image: '/images/client/client-5.webp',
     },
   ],
 };

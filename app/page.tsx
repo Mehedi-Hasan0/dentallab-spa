@@ -3,6 +3,7 @@ import Hero from '@/components/(home)/hero/Hero';
 import Stats from '@/components/(home)/stats/Stats';
 import ArchRestoration from '@/components/(home)/arch/ArchRestoration';
 import Products from '@/components/(home)/products/Products';
+import Testimonials from '@/components/(home)/testimonial/Testimonials';
 import Contact from '@/components/(home)/contact/Contact';
 import AboutUs from '@/components/(home)/aboutUs/AboutUs';
 
@@ -16,6 +17,7 @@ export default function Home() {
       <AboutUs />
       <Products />
       <Contact />
+      <Testimonials />
     </main>
   );
 }
