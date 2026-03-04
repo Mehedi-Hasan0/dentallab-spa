@@ -17,10 +17,6 @@ export default function AboutHeroCard({ data, className }: AboutHeroCardProps) {
 
   return (
     <motion.article
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
       className={clsx(
         'group glass-card-2 relative flex h-full min-h-80 cursor-pointer flex-col overflow-hidden rounded-2xl',
         'focus-within:ring-2 focus-within:ring-white/40',

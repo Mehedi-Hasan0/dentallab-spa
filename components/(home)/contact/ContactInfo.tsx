@@ -1,17 +1,23 @@
 'use client';
 
 import { motion } from 'motion/react';
+import { contactInfoVariants } from './anim';
+import clsx from 'clsx';
 import { contactContent } from '@/constants';
 import { Check, Phone, Mail, MapPin } from 'lucide-react';
 
-export default function ContactInfo() {
+interface ContactInfoProps {
+  className?: string;
+}
+
+export default function ContactInfo({ className }: ContactInfoProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, x: 20 }}
-      whileInView={{ opacity: 1, x: 0 }}
+      variants={contactInfoVariants}
+      initial="hidden"
+      whileInView="visible"
       viewport={{ once: true }}
-      transition={{ duration: 0.8, ease: 'easeOut' }}
-      className="flex flex-col justify-center text-white"
+      className={clsx('flex flex-col justify-center gap-10 text-white lg:gap-16', className)}
     >
       <h2 className="mb-5 text-3xl font-medium tracking-tight md:mb-6 md:text-4xl lg:mb-7 lg:text-5xl xl:mb-8 xl:text-6xl 2xl:mb-10 2xl:text-7xl">
         {contactContent.title}

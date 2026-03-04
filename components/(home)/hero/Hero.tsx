@@ -7,6 +7,7 @@ import { motion, useScroll, useTransform, useSpring } from 'motion/react';
 import { BackgroundVideo } from '@/components/shared/BackgroundVideo';
 import { HeroGrid } from './HeroGrid';
 import { PartnerLogos } from './PartnerLogos';
+import { heroContainerVariants, heroBenefitVariants, heroCtaVariants } from './anim';
 
 export default function Hero() {
   const { scrollY } = useScroll();
@@ -37,10 +38,10 @@ export default function Hero() {
             {/* Left Side: Dynamic Titles */}
             <div className="flex min-w-0 flex-col justify-center pb-28 md:@container md:flex-1 md:justify-end md:pb-20 lg:pb-20">
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
+                variants={heroContainerVariants}
+                initial="hidden"
+                animate="visible"
                 style={{ y }}
-                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                 className="flex min-w-0 flex-col gap-2 lg:gap-2.5 xl:gap-3 2xl:gap-4"
               >
                 <h1
@@ -65,13 +66,10 @@ export default function Hero() {
                 {heroContent.benefits.map((benefit, index) => (
                   <motion.li
                     key={benefit}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{
-                      duration: 0.8,
-                      delay: 0.5 + index * 0.1,
-                      ease: [0.16, 1, 0.3, 1],
-                    }}
+                    variants={heroBenefitVariants}
+                    initial="hidden"
+                    animate="visible"
+                    custom={index}
                     className="font-work-sans text-sm text-white/60 sm:text-base lg:text-lg xl:text-xl"
                   >
                     {benefit}
@@ -80,11 +78,7 @@ export default function Hero() {
               </ul>
 
               {/* Main CTA */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 1, ease: [0.16, 1, 0.3, 1] }}
-              >
+              <motion.div variants={heroCtaVariants} initial="hidden" animate="visible">
                 <Link
                   href={heroContent.cta.href}
                   aria-label={heroContent.cta.ariaLabel}

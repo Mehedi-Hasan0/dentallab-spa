@@ -4,6 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import * as zod from 'zod';
 import { motion } from 'motion/react';
+import { contactFormVariants } from './anim';
 import { Button } from '@/components/ui/button';
 import { Form } from '@/components/ui/form';
 import { ArrowUpRight } from 'lucide-react';
@@ -40,10 +41,10 @@ export default function ContactForm() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: -20 }}
-      whileInView={{ opacity: 1, x: 0 }}
+      variants={contactFormVariants}
+      initial="hidden"
+      whileInView="visible"
       viewport={{ once: true }}
-      transition={{ duration: 0.8, ease: 'easeOut' }}
       className="relative z-10 w-full rounded-3xl bg-black/60 p-4 backdrop-blur-xl md:p-5 lg:max-w-lg lg:p-6 2xl:min-w-120 2xl:p-8"
     >
       <h2 className="mb-10 text-2xl font-medium tracking-tight text-white sm:text-3xl lg:text-[2.5em]">

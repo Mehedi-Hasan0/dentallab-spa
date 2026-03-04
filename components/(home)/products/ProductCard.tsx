@@ -14,10 +14,7 @@ interface ProductCardProps {
 
 export default function ProductCard({ product, isActive, onHover, onLeave }: ProductCardProps) {
   return (
-    <motion.button
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+    <button
       onMouseEnter={onHover}
       onMouseLeave={onLeave}
       onFocus={onHover}
@@ -77,6 +74,6 @@ export default function ProductCard({ product, isActive, onHover, onLeave }: Pro
       >
         <ArrowRight size={16} strokeWidth={2.5} />
       </div>
-    </motion.button>
+    </button>
   );
 }

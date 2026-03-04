@@ -3,32 +3,11 @@
 import { statsContent } from '@/constants';
 import StatCard from './StatCard';
 import { motion } from 'motion/react';
+import { statsContainerVariants, statsItemVariants } from './anim';
 import clsx from 'clsx';
 
 export default function Stats() {
   const { title, description, items } = statsContent;
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: [0.21, 0.47, 0.32, 0.98] as const,
-      },
-    },
-  };
 
   return (
     <section
@@ -60,14 +39,14 @@ export default function Stats() {
         </div>
 
         <motion.div
-          variants={containerVariants}
+          variants={statsContainerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
           className="grid grid-cols-1 gap-1 md:grid-cols-3"
         >
           {items.map((stat, index) => (
-            <motion.div key={index} variants={itemVariants}>
+            <motion.div key={index} variants={statsItemVariants}>
               <StatCard stat={stat} className="h-full" />
             </motion.div>
           ))}

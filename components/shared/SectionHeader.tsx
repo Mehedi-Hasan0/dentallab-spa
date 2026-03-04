@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'motion/react';
+import { fadeRight, fadeLeft } from './sharedAnim';
 import clsx from 'clsx';
 
 interface SectionHeaderProps {
@@ -26,8 +27,9 @@ export default function SectionHeader({
     >
       <motion.h2
         id={headingId}
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        variants={fadeRight}
+        initial="hidden"
+        whileInView="visible"
         viewport={{ once: true }}
         className="title-text text-center md:text-left"
       >
@@ -35,8 +37,9 @@ export default function SectionHeader({
       </motion.h2>
 
       <motion.p
-        initial={{ opacity: 0, x: 20 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        variants={fadeLeft}
+        initial="hidden"
+        whileInView="visible"
         viewport={{ once: true }}
         className="desc-text max-w-md text-center md:text-right"
       >
