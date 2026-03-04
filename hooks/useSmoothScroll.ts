@@ -11,7 +11,10 @@ export const startLenis = () => lenisInstance?.start();
 
 export function useSmoothScroll() {
   useEffect(() => {
-    if (!lenisInstance) {
+    // Only initialize Lenis on Desktop for maximum performance/smoothness balances
+    const isMobile = window.innerWidth < 1024;
+
+    if (!lenisInstance && !isMobile) {
       lenisInstance = new Lenis({
         duration: 1.2,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -26,31 +29,38 @@ export function useSmoothScroll() {
       }
 
       requestAnimationFrame(raf);
+    }
 
-      // Global anchor click handler for smooth scrolling
-      const handleAnchorClick = (e: MouseEvent) => {
-        const target = e.target as HTMLElement;
-        const anchor = target.closest('a');
+    // Global anchor click handler for smooth scrolling
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const anchor = target.closest('a');
 
-        if (!anchor) return;
+      if (!anchor) return;
 
-        const href = anchor.getAttribute('href');
-        if (href?.startsWith('#') && href.length > 1) {
-          const targetElement = document.querySelector(href);
-          if (targetElement && lenisInstance) {
-            e.preventDefault();
+      const href = anchor.getAttribute('href');
+      if (href?.startsWith('#') && href.length > 1) {
+        const targetElement = document.querySelector(href);
+        if (targetElement) {
+          e.preventDefault();
+          if (lenisInstance) {
             lenisInstance.scrollTo(href);
+          } else {
+            // Native fallback for mobile
+            targetElement.scrollIntoView({ behavior: 'smooth' });
           }
         }
-      };
+      }
+    };
 
-      document.addEventListener('click', handleAnchorClick);
+    document.addEventListener('click', handleAnchorClick);
 
-      return () => {
-        document.removeEventListener('click', handleAnchorClick);
-        lenisInstance?.destroy();
+    return () => {
+      document.removeEventListener('click', handleAnchorClick);
+      if (lenisInstance) {
+        lenisInstance.destroy();
         lenisInstance = null;
-      };
-    }
+      }
+    };
   }, []);
 }
