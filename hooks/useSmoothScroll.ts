@@ -13,11 +13,11 @@ export function useSmoothScroll() {
   useEffect(() => {
     if (!lenisInstance) {
       lenisInstance = new Lenis({
-        duration: 2.5,
+        duration: 1.2,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        lerp: 0.05,
+        lerp: 0.1,
         infinite: false,
-        syncTouch: true,
+        syncTouch: false,
       });
 
       function raf(time: number) {
