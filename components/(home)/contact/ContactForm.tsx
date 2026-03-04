@@ -7,7 +7,7 @@ import { motion } from 'motion/react';
 import { Button } from '@/components/ui/button';
 import { Form } from '@/components/ui/form';
 import { ArrowUpRight } from 'lucide-react';
-import ContactFormField from './ContactFormField';
+import FormField from '@/components/shared/FormField';
 
 const contactFormSchema = zod.object({
   name: zod.string().min(2, { message: 'Name must be at least 2 characters.' }),
@@ -52,21 +52,21 @@ export default function ContactForm() {
 
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-          <ContactFormField
+          <FormField
             control={form.control}
             name="name"
             label="Name"
             placeholder="Enter your name"
           />
 
-          <ContactFormField
+          <FormField
             control={form.control}
             name="practice"
             label="Practice"
             placeholder="Enter your practice name"
           />
 
-          <ContactFormField
+          <FormField
             control={form.control}
             name="email"
             label="Email"
@@ -74,14 +74,14 @@ export default function ContactForm() {
             type="email"
           />
 
-          <ContactFormField
+          <FormField
             control={form.control}
             name="phone"
             label="Phone Number"
             placeholder="Enter your phone number"
           />
 
-          <ContactFormField
+          <FormField
             control={form.control}
             name="message"
             label="How can we support your practice?"

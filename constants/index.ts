@@ -9,6 +9,7 @@ import {
   ProductsContent,
   ContactContent,
   TestimonialsContent,
+  FooterContent,
 } from '@/types';
 
 export const navLinks: NavLink[] = [
@@ -411,4 +412,16 @@ export const testimonialsContent: TestimonialsContent = {
       image: '/images/client/client-5.webp',
     },
   ],
+};
+
+export const footerContent: FooterContent = {
+  logo: '/icons/logo.svg',
+  parallaxText: 'Making Teeth Happy',
+  socialLinks: socialLinks,
+  bottomLinks: [
+    { name: 'Shopping & Logistics', href: '#shipping' },
+    { name: 'Remakes & Warranties', href: '#warranties' },
+    { name: 'Technical Support', href: '#support' },
+  ],
+  copyright: `DENTAL LAB - ALL RIGHTS RESERVED - © ${new Date().getFullYear()}`,
 };

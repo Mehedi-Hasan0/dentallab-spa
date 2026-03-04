@@ -6,6 +6,7 @@ import Products from '@/components/(home)/products/Products';
 import Testimonials from '@/components/(home)/testimonial/Testimonials';
 import Contact from '@/components/(home)/contact/Contact';
 import AboutUs from '@/components/(home)/aboutUs/AboutUs';
+import Footer from '@/components/shared/footer/Footer';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Products />
       <Contact />
       <Testimonials />
+      <Footer />
     </main>
   );
 }

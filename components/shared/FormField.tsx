@@ -1,12 +1,18 @@
 'use client';
 
 import { Control, FieldPath, FieldValues } from 'react-hook-form';
-import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import {
+  FormControl,
+  FormField as RhFormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { cn } from '@/lib/utils';
 
-interface ContactFormFieldProps<TFieldValues extends FieldValues> {
+interface FormFieldProps<TFieldValues extends FieldValues> {
   control: Control<TFieldValues>;
   name: FieldPath<TFieldValues>;
   label: string;
@@ -14,9 +20,11 @@ interface ContactFormFieldProps<TFieldValues extends FieldValues> {
   type?: string;
   textarea?: boolean;
   rows?: number;
+  className?: string;
+  variant?: 'default' | 'floating';
 }
 
-export default function ContactFormField<TFieldValues extends FieldValues>({
+export default function FormField<TFieldValues extends FieldValues>({
   control,
   name,
   label,
@@ -24,19 +32,31 @@ export default function ContactFormField<TFieldValues extends FieldValues>({
   type = 'text',
   textarea = false,
   rows = 3,
-}: ContactFormFieldProps<TFieldValues>) {
+  className,
+  variant = 'default',
+}: FormFieldProps<TFieldValues>) {
   const commonClassName = cn(
     'rounded-none border-0 border-b border-white/20 bg-transparent px-0 text-white transition-colors placeholder:text-white/20 focus:border-white focus-visible:ring-0 focus-visible:ring-offset-0',
-    textarea ? 'min-h-[100px] py-4 resize-none' : 'h-12'
+    textarea ? 'min-h-[100px] py-4 resize-none' : 'h-12',
+    className
   );
 
   return (
-    <FormField
+    <RhFormField
       control={control}
       name={name}
       render={({ field }) => (
-        <FormItem className="space-y-1">
-          <FormLabel className="text-white/60">{label}</FormLabel>
+        <FormItem className={cn('relative space-y-1', variant === 'floating' && 'group pt-4')}>
+          <FormLabel
+            className={cn(
+              'transition-colors',
+              variant === 'default'
+                ? 'text-white/60'
+                : 'absolute -top-1 left-0 text-xs font-medium text-white/40 group-focus-within:text-white'
+            )}
+          >
+            {label}
+          </FormLabel>
           <FormControl>
             {textarea ? (
               <Textarea
@@ -49,7 +69,9 @@ export default function ContactFormField<TFieldValues extends FieldValues>({
               <Input placeholder={placeholder} type={type} className={commonClassName} {...field} />
             )}
           </FormControl>
-          <FormMessage className="text-xs text-red-400" />
+          <FormMessage
+            className={cn('text-xs text-red-400', variant === 'floating' && 'absolute -bottom-6')}
+          />
         </FormItem>
       )}
     />

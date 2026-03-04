@@ -162,3 +162,15 @@ export type TestimonialsContent = {
   description: string;
   items: TestimonialItem[];
 };
+export type FooterLink = {
+  name: string;
+  href: string;
+};
+
+export type FooterContent = {
+  logo: string;
+  parallaxText: string;
+  socialLinks: SocialLink[];
+  bottomLinks: FooterLink[];
+  copyright: string;
+};
