@@ -301,9 +301,18 @@ export const productsContent: ProductsContent = {
       number: '01',
       dots: [true, false, false, false],
       previewImages: [
-        { src: '/images/product/product-1.webp', alt: 'Fixed restoration example 1' },
-        { src: '/images/product/product-2.webp', alt: 'Fixed restoration example 2' },
-        { src: '/images/product/product-10.webp', alt: 'Fixed restoration example 3' },
+        {
+          src: '/images/product/product-1.webp',
+          alt: 'Precision Zirconia Crown showing natural anatomy and shading',
+        },
+        {
+          src: '/images/product/product-2.webp',
+          alt: 'Multi-unit Zirconia Bridge restoration on a stone model',
+        },
+        {
+          src: '/images/product/product-10.webp',
+          alt: 'High-esthetic anterior crown with professional characterization',
+        },
       ],
     },
     {
@@ -312,9 +321,18 @@ export const productsContent: ProductsContent = {
       number: '02',
       dots: [true, true, false, false],
       previewImages: [
-        { src: '/images/product/product-3.webp', alt: 'Implant restoration example 1' },
-        { src: '/images/product/product-4.webp', alt: 'Implant restoration example 2' },
-        { src: '/images/product/product-11.webp', alt: 'Implant restoration example 3' },
+        {
+          src: '/images/product/product-3.webp',
+          alt: 'Custom Titanium Abutment with a perfectly fitted crown',
+        },
+        {
+          src: '/images/product/product-4.webp',
+          alt: 'Screw-retained implant restoration showing occlusal access',
+        },
+        {
+          src: '/images/product/product-11.webp',
+          alt: 'Full arch implant-supported prosthesis with pink esthetics',
+        },
       ],
     },
     {
@@ -323,9 +341,18 @@ export const productsContent: ProductsContent = {
       number: '03',
       dots: [true, true, true, false],
       previewImages: [
-        { src: '/images/product/product-5.webp', alt: 'Removable restoration example 1' },
-        { src: '/images/product/product-6.webp', alt: 'Removable restoration example 2' },
-        { src: '/images/product/product-12.webp', alt: 'Removable restoration example 3' },
+        {
+          src: '/images/product/product-5.webp',
+          alt: 'Complete upper denture with natural tooth arrangement',
+        },
+        {
+          src: '/images/product/product-6.webp',
+          alt: 'Partial cast-frame denture for durable removable solution',
+        },
+        {
+          src: '/images/product/product-12.webp',
+          alt: 'Flexible partial denture providing comfort and esthetics',
+        },
       ],
     },
     {
@@ -334,9 +361,18 @@ export const productsContent: ProductsContent = {
       number: '04',
       dots: [true, true, true, true],
       previewImages: [
-        { src: '/images/product/product-7.webp', alt: 'Retainer restoration example 1' },
-        { src: '/images/product/product-8.webp', alt: 'Retainer restoration example 2' },
-        { src: '/images/product/product-13.webp', alt: 'Retainer restoration example 3' },
+        {
+          src: '/images/product/product-7.webp',
+          alt: 'Orthodontic Hawley retainer with custom acrylic colors',
+        },
+        {
+          src: '/images/product/product-8.webp',
+          alt: 'Clear Essix-style retainer for invisible retention',
+        },
+        {
+          src: '/images/product/product-13.webp',
+          alt: 'Splint appliance for bruxism and night protection',
+        },
       ],
     },
   ],
