@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { ProductItem } from '@/types';
 import clsx from 'clsx';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import MagneticFramer from '@/components/shared/MagneticFramer';
 
 interface ProductCardProps {
   product: ProductItem;
@@ -48,7 +49,9 @@ export default function ProductCard({ product, isActive, onHover, onLeave }: Pro
                 transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
                 className="absolute top-0 right-0 z-10 hidden items-center justify-center rounded-full bg-white text-black lg:flex lg:h-12 lg:w-12"
               >
-                <ArrowUpRight strokeWidth={2.5} className="size-6" />
+                <MagneticFramer strength={0.9}>
+                  <ArrowUpRight strokeWidth={2.5} className="size-6" />
+                </MagneticFramer>
               </motion.div>
             )}
           </AnimatePresence>

@@ -2,6 +2,7 @@
 
 import { socialLinks, offices } from '@/constants';
 import SocialIcon from '../SocialIcon';
+import MagneticFramer from '../MagneticFramer';
 
 export default function MenuFooter() {
   return (
@@ -11,15 +12,17 @@ export default function MenuFooter() {
         <ul className="flex gap-6">
           {socialLinks.map((social) => (
             <li key={social.name}>
-              <a
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 p-3 text-white/60 transition-all hover:border-white hover:text-white"
-                aria-label={social.name}
-              >
-                <SocialIcon name={social.icon} size={20} />
-              </a>
+              <MagneticFramer strength={0.9}>
+                <a
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 p-3 text-white/60 transition-all hover:border-white hover:text-white"
+                  aria-label={social.name}
+                >
+                  <SocialIcon name={social.icon} size={20} />
+                </a>
+              </MagneticFramer>
             </li>
           ))}
         </ul>

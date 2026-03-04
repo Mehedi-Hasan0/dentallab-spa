@@ -8,6 +8,7 @@ import { BackgroundVideo } from '@/components/shared/BackgroundVideo';
 import { HeroGrid } from './HeroGrid';
 import { PartnerLogos } from './PartnerLogos';
 import { heroContainerVariants, heroBenefitVariants, heroCtaVariants } from './anim';
+import MagneticFramer from '@/components/shared/MagneticFramer';
 
 export default function Hero() {
   const { scrollY } = useScroll();
@@ -78,20 +79,22 @@ export default function Hero() {
               </ul>
 
               {/* Main CTA */}
-              <motion.div variants={heroCtaVariants} initial="hidden" animate="visible">
-                <Link
-                  href={heroContent.cta.href}
-                  aria-label={heroContent.cta.ariaLabel}
-                  className="group btn-pill"
-                >
-                  <span className="text-base font-medium text-white sm:text-lg">
-                    {heroContent.cta.text}
-                  </span>
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 transition-transform duration-500 group-hover:rotate-45 sm:h-10 sm:w-10">
-                    <ArrowUpRight className="h-5 w-5 text-white" />
-                  </div>
-                </Link>
-              </motion.div>
+              <MagneticFramer>
+                <motion.div variants={heroCtaVariants} initial="hidden" animate="visible">
+                  <Link
+                    href={heroContent.cta.href}
+                    aria-label={heroContent.cta.ariaLabel}
+                    className="group btn-pill"
+                  >
+                    <span className="text-base font-medium text-white sm:text-lg">
+                      {heroContent.cta.text}
+                    </span>
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 transition-transform duration-500 group-hover:rotate-45 sm:h-10 sm:w-10">
+                      <ArrowUpRight className="h-5 w-5 text-white" />
+                    </div>
+                  </Link>
+                </motion.div>
+              </MagneticFramer>
             </div>
           </div>
         </div>

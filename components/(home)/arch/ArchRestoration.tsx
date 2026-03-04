@@ -7,6 +7,7 @@ import { getLenis } from '@/hooks/useSmoothScroll';
 import ArchCard from './ArchCard';
 import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
+import MagneticFramer from '@/components/shared/MagneticFramer';
 
 export default function ArchRestoration() {
   const { title, description, videoSrc, cards } = archRestorationContent;
@@ -153,16 +154,18 @@ export default function ArchRestoration() {
           animate={isCardsActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           className="absolute bottom-8 left-1/2 z-40 -translate-x-1/2 lg:bottom-10"
         >
-          <Link
-            href="#"
-            aria-label="See full details of arch restoration products"
-            className="group flex h-14 items-center gap-4 rounded-full border border-white/20 bg-white/5 px-6 backdrop-blur-md transition-all duration-500 hover:border-white/50 hover:bg-white/10 sm:px-8 lg:h-16"
-          >
-            <span className="text-base font-medium text-white lg:text-lg">See details</span>
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 transition-transform duration-500 group-hover:rotate-45 lg:h-10 lg:w-10">
-              <ArrowUpRight className="h-5 w-5 text-white" />
-            </div>
-          </Link>
+          <MagneticFramer strength={0.2}>
+            <Link
+              href="#"
+              aria-label="See full details of arch restoration products"
+              className="group flex h-14 items-center gap-4 rounded-full border border-white/20 bg-white/5 px-6 backdrop-blur-md transition-all duration-500 hover:border-white/50 hover:bg-white/10 sm:px-8 lg:h-16"
+            >
+              <span className="text-base font-medium text-white lg:text-lg">See details</span>
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 transition-transform duration-500 group-hover:rotate-45 lg:h-10 lg:w-10">
+                <ArrowUpRight className="h-5 w-5 text-white" />
+              </div>
+            </Link>
+          </MagneticFramer>
         </motion.div>
       </div>
     </section>

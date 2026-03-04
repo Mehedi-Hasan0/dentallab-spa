@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import clsx from 'clsx';
 import { MoveUpRight } from 'lucide-react';
+import MagneticFramer from './MagneticFramer';
 
 interface GridCardProps {
   feature: FeatureItem;
@@ -63,14 +64,16 @@ export default function GridCard({ feature, className }: GridCardProps) {
               )}
 
               {feature.cta && (
-                <Link
-                  href={feature.cta.href}
-                  aria-label={feature.cta.ariaLabel}
-                  className="flex w-fit items-center gap-1 rounded-full bg-white px-5 py-3 text-sm font-medium text-black transition-all hover:bg-white/90 md:px-8 md:py-4 lg:px-3 lg:py-2.5 lg:text-xs xl:gap-2 xl:px-6 xl:py-3 xl:text-base"
-                >
-                  {feature.cta.text}
-                  <MoveUpRight className="h-4 w-4" />
-                </Link>
+                <MagneticFramer strength={0.1}>
+                  <Link
+                    href={feature.cta.href}
+                    aria-label={feature.cta.ariaLabel}
+                    className="flex w-fit items-center gap-1 rounded-full bg-white px-5 py-3 text-sm font-medium text-black transition-all hover:bg-white/90 md:px-8 md:py-4 lg:px-3 lg:py-2.5 lg:text-xs xl:gap-2 xl:px-6 xl:py-3 xl:text-base"
+                  >
+                    {feature.cta.text}
+                    <MoveUpRight className="h-4 w-4" />
+                  </Link>
+                </MagneticFramer>
               )}
             </div>
           </div>
