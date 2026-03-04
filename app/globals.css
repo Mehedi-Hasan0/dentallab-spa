@@ -139,9 +139,11 @@
   /* GLASS CARD */
   .glass-card {
     @apply rounded-2xl border border-white/5 bg-black/10 backdrop-blur-lg;
+    will-change: transform;
   }
   .glass-card-2 {
     @apply bg-white/10 backdrop-blur-sm;
+    will-change: transform;
   }
   .glass-link {
     @apply text-white/60 transition-colors duration-300 hover:text-white;
@@ -155,7 +157,7 @@
   }
   /* Shared nav dropdown card shell */
   .nav-card {
-    @apply relative flex h-60 cursor-pointer flex-col justify-between overflow-hidden rounded-2xl border border-white/5 bg-black/10 p-6 backdrop-blur-lg transition-all duration-700 hover:border-white/10;
+    @apply bg-primary/10 relative flex h-60 cursor-pointer flex-col justify-between overflow-hidden rounded-2xl border border-white/5 p-6 backdrop-blur-lg transition-all duration-700 hover:border-white/20;
   }
   /* Shared nav card heading */
   .nav-card-title {

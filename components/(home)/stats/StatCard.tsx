@@ -36,13 +36,13 @@ export default function StatCard({ stat, className }: StatCardProps) {
     <article
       ref={ref}
       className={clsx(
-        'glass-card-2 relative flex flex-col items-center justify-center rounded-2xl p-6 text-center transition-all duration-300 md:items-start md:text-left lg:p-8 2xl:p-9',
+        'glass-card-2 relative flex flex-col items-center justify-center overflow-hidden rounded-2xl p-6 text-center transition-all duration-300 md:items-start md:text-left lg:p-8 2xl:p-9',
         className
       )}
     >
       {/* background pattern */}
       <div
-        className='absolute inset-0 z-0 bg-[url("/images/bg-img/bg-pattern-3.webp")] bg-cover bg-center bg-no-repeat opacity-70 blur-xs transition-transform duration-500 group-hover:scale-110'
+        className='absolute inset-0 z-0 bg-[url("/images/bg-img/bg-pattern-3.webp")] bg-cover bg-center bg-no-repeat opacity-70 transition-transform duration-500 group-hover:scale-110'
         aria-hidden="true"
       />
 

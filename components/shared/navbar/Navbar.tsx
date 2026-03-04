@@ -125,7 +125,7 @@ export default function Navbar() {
       </AnimatePresence>
 
       {/* Dropdowns */}
-      <AnimatePresence mode="wait">
+      <AnimatePresence>
         {(() => {
           const activeLink = navLinks.find(
             (link) => link.name === openDropdown && link.dropdownItems

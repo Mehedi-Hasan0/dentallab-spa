@@ -15,32 +15,34 @@ export default function NavDropdown({ items }: NavDropdownProps) {
 
   return (
     <motion.div
-      initial={{ y: '-100%', opacity: 0 }}
-      animate={{ y: '0%', opacity: 1 }}
-      exit={{ y: '-100%', opacity: 0 }}
+      initial={{ y: '-100%' }}
+      animate={{ y: '0%' }}
+      exit={{ y: '-100%' }}
       transition={{
-        duration: 0.6,
+        duration: 0.55,
         ease: [0.22, 1, 0.36, 1],
       }}
       className="absolute top-0 right-0 left-0 z-30 px-5 pt-28 pb-16 xl:px-10 xl:pt-32 2xl:px-20"
     >
       <ul className={`mx-auto grid grid-cols-1 gap-2 md:grid-cols-2 ${gridCols}`}>
         {items.map((item, index) => (
-          <motion.li
-            key={item.title}
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{
-              delay: 0.1 + index * 0.05,
-              duration: 0.5,
-            }}
-          >
-            {item.phone || item.email ? (
-              <NavContactCard item={item} />
-            ) : (
-              <NavProductCard item={item} />
-            )}
-          </motion.li>
+          <li key={item.title}>
+            <motion.div
+              initial={{ y: 20 }}
+              animate={{ y: 0 }}
+              transition={{
+                delay: 0.1 + index * 0.05,
+                duration: 0.5,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+            >
+              {item.phone || item.email ? (
+                <NavContactCard item={item} />
+              ) : (
+                <NavProductCard item={item} />
+              )}
+            </motion.div>
+          </li>
         ))}
       </ul>
     </motion.div>
