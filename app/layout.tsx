@@ -1,11 +1,13 @@
+import dynamic from 'next/dynamic';
 import type { Metadata } from 'next';
 import { Inter, Work_Sans } from 'next/font/google';
 import './globals.css';
-import CursorEffect from '@/components/shared/CursorEffect';
 import Navbar from '@/components/shared/navbar/Navbar';
 import JsonLd from '@/components/shared/JsonLd';
 import { SmoothScrollProvider } from '@/components/shared/SmoothScrollProvider';
 import { Toaster } from '@/components/ui/sonner';
+import CursorEffect from '@/components/shared/CursorEffect';
+const Footer = dynamic(() => import('@/components/shared/footer/Footer'));
 
 const inter = Inter({
   variable: '--font-inter',
@@ -84,13 +86,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preload" href="/images/hero-video-poster.webp" as="image" type="image/webp" />
+      </head>
       <body className={`${inter.variable} ${workSans.variable} antialiased`}>
         <JsonLd />
         <SmoothScrollProvider>
+          <Toaster />
           <CursorEffect />
           <Navbar />
           {children}
-          <Toaster />
+          <Footer />
         </SmoothScrollProvider>
       </body>
     </html>

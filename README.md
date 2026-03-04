@@ -1,38 +1,109 @@
-### Project Overview
+# Next.js Dental Lab SPA - Technical Assessment
 
-This project is aim to find the improvements scope of the main project. The link of the main project is : [https://dentallab.com/](https://dentallab.com/)
+A high-performance, single-page rebuild of the Dentallab.com homepage, focused on premium user experience, semantic, and modern frontend architecture.
 
-### Key observations reviewing the main project:
+---
 
-#### Overview:
+## Technical Stack
 
-1. When the full page loads there's no loading indicator
-2. All the buttons of the website could have a small amount of magnetic snappy effect. This could increase micro animations and grab user attentions.
-3. The full website has a scroll effect. Slow/Smooth scroll.
+- **Framework**: Next.js 16+ (App Router)
+- **Styling**: Tailwind CSS 4.0
+- **Animations**: Motion (Framer Motion) & Lenis (Smooth Scroll)
+- **Icons/UI**: Lucide React & Sonner
+- **Validation**: Zod & React Hook Form
+- **Testing**: Vitest with Colocated Test Files
 
-#### Navbar:
+---
 
-1. When links are clicked then the nav options are opened with a mega menu, but when clicked outside they don't get closed. Also when scrolled while the nav options are open then they get hidden because the overall nav is hidden but when scrolled up then the nav appear and then as previously the nav options was open so the nav options is also opened. So here we could improve it.
-2. Nav mega menu texts has quick hover animations, feels snappy and flashy, could have a slight delay to make it feel smooth.
-3. When the 'products' mega menu is hovered then 'see details button' appear from the bottom. But the problem is the button appears overlap from the card. We could use overflow hidden here for improvements.
-4. For 'Contact' mega menu options we also see flasy hover text colors, needs to add duration to make it smooth. Same outside click doesn't close the mega menu.
-5. When menu button is clicked then the mega menu appears. And it takes the full width and height. Once it appears only way to close it is to click on the menu and close it. But the problem here might be that we can scroll. As this is taking full width and height and there's no way to close the menu by clicking on the menu button again so it might be better to stop the scrolling when menu is opened.
-6. When the mega menu opened by menu button then if we scrolled the menu itself get hidden. So it's better to stop the scrolling when mega menu opened. [Similar to 5]
-7. Mega menu by menu, button has a button for dentists to login, when hovered they split into two region and these buttons animations for hover colored appears too fast and feels snappy.
-8. Mega menu by menu, has a 'Send Case Digitally' button type text. WHen hovered a icons appears, this seems like a button but can't be clicked. It might be indicating that user needs to click the button. An improvements can be that the icons will be there but it will have a motions to indicate the user to the right to the button. This can improve UX and this text should not have 'cursor pointer' as user can't click on it at all.
-9. Mega menu by menu, has social icons and hovering them doesn't have any animated color changes. It would be better to add hover color animations here.
+## Strategic Improvements
 
-#### Hero Section:
+Instead of a pixel-perfect clone, this rebuild focuses on solving core UX and performance bottlenecks identified in the original site.
 
-1. Hero section has a video, that is progressivly downloading and doesn't blocking the UI. That's good but the problem is the video doesn't have any poster when the video is loading. So even if the video loads very fast, but for slow mobile network the background of the hero section remains black/empty. A well poster image for the video would be good. This would make the UX better as even if the video loads the image will be there for the backup.
-2. When hovered down then we can hover over the video controls. If there's a way to hide the controls of the video this would be good. Conctrol is overlaping the UI of the hero sections.
+### 1. Interactivity
 
-#### Our Features Section:
+- **Magnetic Components**: Critical interactive elements (CTA buttons, social links) feature a high-end magnetic pull effect to grab user attention.
+- **Fluid Navigation**: Fixed the snappy/flashy mega-menu transitions. Implemented an "Outside Click" listener and mobile scroll-locking for a more native-app feel.
+- **Scroll-Linked Storytelling**: The "Full Arch" section uses synchronized video and text animations to guide the user through technical details.
 
-1. When the our features section arrives on the view port then at right we have some description text, it's still and has no motion. So we can have some appear animation but it should be charactes animation not like appears the whole text. A good example is Antigravity IDE website text animation.
-2. The first card of the section tells user to buy with a offer, and when hovered the card a small description appears from top to bottom. Here a good improvement could be that the description remains there and when on the viewport then it shown with a character animation. Similar to Antigravity IDE website text animations.
-   Cause: The might never hover over the card and a good information to convery our message for conversion could be missed because of that informations.
+### 2. Performance-First Media
 
-#### Stats Section:
+- **Video Poster Strategy**: Added dynamic poster images to all background videos. This prevents the "black flash" or empty sections while high-res video assets are buffering on slower networks.
+- **Optimized Assets**: Leveraged `next/image` with calculated `sizes` and `quality` parameters to ensure minimal layout shift and fast loading on mobile.
 
-1. Could have a simple card text appear animation if feels too much then not to.
+### 3. SEO & Semantic Integrity
+
+- **Structured Data**: Implemented **JSON-LD (LocalBusiness)** to improve search engine visibility and rich snippet generation.
+- **Metadata Templates**: Professional metadata structure with dynamic title templates and OpenGraph/Twitter card support.
+- **Semantic Hierarchy**: Corrected heading levels (`h1`-`h6`) ensuring a logical document outline for both SEO and screen readers.
+
+### 4. Clean Architecture
+
+- **Content Decoupling**: All site text and configuration are centralized in `constants/index.ts`, making content updates trivial without touching component logic.
+- **Colocated Testing**: Unit tests (Vitest) are located directly next to the logic they validate (e.g., `schema/contact.test.ts`).
+
+---
+
+## Setup & Installation
+
+Follow these steps to run the project locally:
+
+1. **Clone & Install**:
+
+   ```bash
+   git clone <repository-url>
+   cd dentallab-spa
+   npm install
+   ```
+
+2. **Run Development Server**:
+
+   ```bash
+   npm run dev
+   ```
+
+   Open [http://localhost:3050](http://localhost:3050) to view the result.
+
+3. **Running Tests**:
+   ```bash
+   npm test
+   ```
+
+---
+
+## Project Structure
+
+```text
+├── app/                  # Next.js App Router (Layouts, Pages, SEO)
+├── components/           # Reusable UI & Section Components
+│   ├── (home)/           # Home-specific section components
+│   └── shared/           # Cross-component utilities (Magnetic, Forms)
+├── constants/            # Site content and configuration
+├── hooks/                # Custom hooks (SmoothScroll, ScrollLock)
+├── schema/               # Validation schemas and unit tests
+└── public/               # Optimized assets (Videos, Icons, Images)
+```
+
+---
+
+## Bonus Features Included
+
+- **Accessibility**: ARIA labels, semantic tags, and keyboard-friendly navigation.
+- **Unit Testing**: Strategic test coverage for form validation.
+- **Robust Contact Form**: Fully validated with Zod, featuring real-time feedback and success toasts.
+- **Global Smooth Scroll**: Custom Lenis implementation with hash-link interception for seamless internal navigation.
+
+## Lighthouse Performance Comparison
+
+To validate the improvements, I compared my rebuild against the original reference site using Lighthouse audits for both Mobile and Desktop.
+
+### Mobile Performance
+
+|                                    Original Site                                    |                              Rebuilt Site (This Project)                              |
+| :---------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: |
+| ![Original Mobile Performance](./public/comparison/original-mobile-performance.png) | ![Recreated Mobile Performance](./public/comparison/recreated-mobile-performance.png) |
+
+### Desktop Performance
+
+|                                  Original Site                                   |                            Rebuilt Site (This Project)                             |
+| :------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------: |
+| ![Original Desktop Performance](./public/comparison/original-pc-performance.png) | ![Recreated Desktop Performance](./public/comparison/recreated-pc-performance.png) |

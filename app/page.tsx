@@ -1,12 +1,13 @@
-import Feature from '@/components/(home)/feature/Feature';
+import dynamic from 'next/dynamic';
 import Hero from '@/components/(home)/hero/Hero';
+import Feature from '@/components/(home)/feature/Feature';
 import Stats from '@/components/(home)/stats/Stats';
 import ArchRestoration from '@/components/(home)/arch/ArchRestoration';
-import Products from '@/components/(home)/products/Products';
-import Testimonials from '@/components/(home)/testimonial/Testimonials';
-import Contact from '@/components/(home)/contact/Contact';
-import AboutUs from '@/components/(home)/aboutUs/AboutUs';
-import Footer from '@/components/shared/footer/Footer';
+
+const AboutUs = dynamic(() => import('@/components/(home)/aboutUs/AboutUs'));
+const Products = dynamic(() => import('@/components/(home)/products/Products'));
+const Contact = dynamic(() => import('@/components/(home)/contact/Contact'));
+const Testimonials = dynamic(() => import('@/components/(home)/testimonial/Testimonials'));
 
 export default function Home() {
   return (
@@ -19,7 +20,6 @@ export default function Home() {
       <Products />
       <Contact />
       <Testimonials />
-      <Footer />
     </main>
   );
 }
