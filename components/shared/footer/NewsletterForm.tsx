@@ -2,29 +2,22 @@
 
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import * as z from 'zod';
 import { motion } from 'motion/react';
 import { ArrowUpRight } from 'lucide-react';
 import { Form } from '@/components/ui/form';
 import { Button } from '@/components/ui/button';
 import FormField from '@/components/shared/FormField';
-
-const formSchema = z.object({
-  email: z.string().email('Please enter a valid email address'),
-});
-
-type FormValues = z.infer<typeof formSchema>;
+import { newsletterSchema, type NewsletterFormValues } from '@/schema';
 
 export function NewsletterForm() {
-  const form = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<NewsletterFormValues>({
+    resolver: zodResolver(newsletterSchema),
     defaultValues: {
       email: '',
     },
   });
 
-  function onSubmit(values: FormValues) {
-    // Implement subscription logic here
+  function onSubmit(values: NewsletterFormValues) {
     console.log('Newsletter subscription:', values);
     form.reset();
   }

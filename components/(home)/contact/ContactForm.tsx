@@ -2,23 +2,13 @@
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import * as zod from 'zod';
 import { motion } from 'motion/react';
 import { contactFormVariants } from './anim';
+import { contactFormSchema, type ContactFormValues } from '@/schema';
 import { Button } from '@/components/ui/button';
 import { Form } from '@/components/ui/form';
 import { ArrowUpRight } from 'lucide-react';
 import FormField from '@/components/shared/FormField';
-
-const contactFormSchema = zod.object({
-  name: zod.string().min(2, { message: 'Name must be at least 2 characters.' }),
-  practice: zod.string().min(2, { message: 'Practice name must be at least 2 characters.' }),
-  email: zod.string().email({ message: 'Please enter a valid email address.' }),
-  phone: zod.string().min(10, { message: 'Please enter a valid phone number.' }),
-  message: zod.string().min(10, { message: 'Message must be at least 10 characters.' }),
-});
-
-type ContactFormValues = zod.infer<typeof contactFormSchema>;
 
 export default function ContactForm() {
   const form = useForm<ContactFormValues>({
@@ -33,7 +23,6 @@ export default function ContactForm() {
   });
 
   function onSubmit(values: ContactFormValues) {
-    // In a real app, you'd send this to your API
     console.log(values);
     alert('Thank you! Your message has been sent.');
     form.reset();
