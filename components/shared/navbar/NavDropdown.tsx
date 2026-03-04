@@ -1,6 +1,3 @@
-'use client';
-
-import React from 'react';
 import { motion } from 'motion/react';
 import NavProductCard from './NavProductCard';
 import NavContactCard from './NavContactCard';

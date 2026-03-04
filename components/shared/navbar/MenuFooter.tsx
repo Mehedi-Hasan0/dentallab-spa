@@ -1,5 +1,3 @@
-'use client';
-
 import { socialLinks, offices } from '@/constants';
 import SocialIcon from '../SocialIcon';
 import MagneticFramer from '../MagneticFramer';

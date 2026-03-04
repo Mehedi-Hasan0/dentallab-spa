@@ -1,5 +1,3 @@
-'use client';
-
 import { BackgroundVideo } from '@/components/shared/BackgroundVideo';
 import { contactContent } from '@/constants';
 import ContactForm from './ContactForm';

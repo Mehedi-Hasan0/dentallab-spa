@@ -1,5 +1,3 @@
-'use client';
-
 import { navLinks } from '@/constants';
 import MenuLink from './MenuLink';
 import clsx from 'clsx';

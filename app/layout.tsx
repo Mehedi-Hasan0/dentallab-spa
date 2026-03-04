@@ -20,6 +20,7 @@ const workSans = Work_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://dentallab-spa.vercel.app'),
   title: {
     default: 'Dental Lab | High-Precision Dental Restorations & All-on-X Expertise',
     template: '%s | Dental Lab',

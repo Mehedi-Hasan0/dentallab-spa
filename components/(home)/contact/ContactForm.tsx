@@ -10,6 +10,7 @@ import { Form } from '@/components/ui/form';
 import { ArrowUpRight } from 'lucide-react';
 import FormField from '@/components/shared/FormField';
 import { toast } from 'sonner';
+import clsx from 'clsx';
 
 export default function ContactForm() {
   const form = useForm<ContactFormValues>({
@@ -81,9 +82,19 @@ export default function ContactForm() {
             rows={3}
           />
 
-          <Button type="submit" className="group btn-pill-white">
-            Connect with Our Team
-            <div className="ml-2 flex h-8 w-8 items-center justify-center rounded-full bg-black/10 transition-transform duration-300 group-hover:rotate-45">
+          <Button
+            type="submit"
+            className="group/btn btn-pill-white relative overflow-hidden transition-all duration-300 hover:bg-transparent hover:text-white"
+          >
+            {/* Subtle Gradient Hover Overlay */}
+            <div
+              className={clsx(
+                'absolute inset-0 opacity-0 transition-opacity duration-700 ease-out group-hover/btn:opacity-100',
+                'from-accent bg-linear-to-r to-red-900'
+              )}
+            />
+            <span className="relative z-10">Connect with Our Team</span>
+            <div className="relative z-10 ml-2 flex h-8 w-8 items-center justify-center rounded-full bg-black/10 transition-all duration-300 group-hover/btn:rotate-45 group-hover/btn:bg-white/20">
               <ArrowUpRight size={18} />
             </div>
           </Button>

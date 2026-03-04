@@ -68,10 +68,17 @@ export default function GridCard({ feature, className }: GridCardProps) {
                   <Link
                     href={feature.cta.href}
                     aria-label={feature.cta.ariaLabel}
-                    className="flex w-fit items-center gap-1 rounded-full bg-white px-5 py-3 text-sm font-medium text-black transition-all hover:bg-white/90 md:px-8 md:py-4 lg:px-3 lg:py-2.5 lg:text-xs xl:gap-2 xl:px-6 xl:py-3 xl:text-base"
+                    className="group/btn relative flex w-fit items-center gap-1 overflow-hidden rounded-full bg-white px-5 py-3 text-sm font-medium text-black transition-all hover:bg-transparent hover:text-white md:px-8 md:py-4 lg:px-3 lg:py-2.5 lg:text-xs xl:gap-2 xl:px-6 xl:py-3 xl:text-base"
                   >
-                    {feature.cta.text}
-                    <MoveUpRight className="h-4 w-4" />
+                    {/* Subtle Gradient Hover Overlay */}
+                    <div
+                      className={clsx(
+                        'absolute inset-0 opacity-0 transition-opacity duration-700 ease-out group-hover/btn:opacity-100',
+                        'from-accent bg-linear-to-r to-red-900'
+                      )}
+                    />
+                    <span className="relative z-10">{feature.cta.text}</span>
+                    <MoveUpRight className="relative z-10 h-4 w-4" />
                   </Link>
                 </MagneticFramer>
               )}

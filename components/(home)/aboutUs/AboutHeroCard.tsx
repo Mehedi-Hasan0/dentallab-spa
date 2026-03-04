@@ -88,12 +88,19 @@ export default function AboutHeroCard({ data, className }: AboutHeroCardProps) {
           aria-label={cta.ariaLabel}
           tabIndex={0}
           className={clsx(
-            'flex w-fit items-center gap-1.5 rounded-full bg-white px-5 py-2.5 text-sm font-medium text-black',
-            'transition-all duration-300 hover:bg-white/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'
+            'group/btn relative flex w-fit items-center gap-1.5 overflow-hidden rounded-full bg-white px-5 py-2.5 text-sm font-medium text-black',
+            'transition-all duration-300 hover:bg-transparent hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'
           )}
         >
-          {cta.text}
-          <MoveUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+          {/* Subtle Gradient Hover Overlay */}
+          <div
+            className={clsx(
+              'absolute inset-0 opacity-0 transition-opacity duration-700 ease-out group-hover/btn:opacity-100',
+              'from-accent bg-linear-to-r to-red-900'
+            )}
+          />
+          <span className="relative z-10">{cta.text}</span>
+          <MoveUpRight className="relative z-10 h-3.5 w-3.5" aria-hidden="true" />
         </Link>
       </div>
     </motion.article>

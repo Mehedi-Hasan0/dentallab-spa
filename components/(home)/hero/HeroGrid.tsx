@@ -1,5 +1,3 @@
-'use client';
-
 /**
  * HeroGrid - A decorative background grid component.
  */

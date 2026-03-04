@@ -1,13 +1,11 @@
-'use client';
-
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { motion } from 'motion/react';
 import { ArrowUpRight } from 'lucide-react';
 import { Form } from '@/components/ui/form';
 import { Button } from '@/components/ui/button';
 import FormField from '@/components/shared/FormField';
 import { toast } from 'sonner';
+import clsx from 'clsx';
 
 import { newsletterSchema, type NewsletterFormValues } from '@/schema';
 
@@ -42,17 +40,24 @@ export function NewsletterForm() {
           />
         </div>
 
-        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="shrink-0">
+        <div className="shrink-0">
           <Button
             type="submit"
-            className="group flex h-12 gap-3 rounded-full bg-white px-8 text-black transition-all hover:bg-neutral-200"
+            className="group/btn relative flex h-12 gap-3 overflow-hidden rounded-full bg-white px-8 text-black transition-all duration-300 hover:bg-transparent hover:text-white"
           >
-            <span className="text-sm font-semibold">Subscribe</span>
-            <div className="flex h-6 w-6 items-center justify-center rounded-full bg-black/5 transition-transform duration-500 group-hover:rotate-45">
-              <ArrowUpRight className="h-4 w-4 text-black" />
+            {/* Subtle Gradient Hover Overlay */}
+            <div
+              className={clsx(
+                'absolute inset-0 opacity-0 transition-opacity duration-700 ease-out group-hover/btn:opacity-100',
+                'from-accent bg-linear-to-r to-red-900'
+              )}
+            />
+            <span className="relative z-10 text-sm font-semibold">Subscribe</span>
+            <div className="relative z-10 flex h-6 w-6 items-center justify-center rounded-full bg-black/5 transition-all duration-500 group-hover/btn:rotate-45 group-hover/btn:bg-white/20">
+              <ArrowUpRight className="h-4 w-4" />
             </div>
           </Button>
-        </motion.div>
+        </div>
       </form>
     </Form>
   );

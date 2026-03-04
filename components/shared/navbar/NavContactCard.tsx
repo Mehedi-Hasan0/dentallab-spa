@@ -1,5 +1,3 @@
-'use client';
-
 import { Phone, Mail } from 'lucide-react';
 import { NavCardItem } from '@/types';
 

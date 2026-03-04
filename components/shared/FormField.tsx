@@ -1,5 +1,3 @@
-'use client';
-
 import { Control, FieldPath, FieldValues } from 'react-hook-form';
 import {
   FormControl,
